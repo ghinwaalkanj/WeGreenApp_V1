@@ -4,7 +4,6 @@ import 'package:path/path.dart';
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 import 'package:we_green_v1/core/class/statusrequest.dart';
-
 import '../services/checkinternet.dart';
 
 class Crud {
@@ -31,7 +30,7 @@ class Crud {
       String linkurl, Map<String, String> headers) async {
     // if (await checkInternet()) {
     var response = await http.get(Uri.parse(linkurl), headers: headers);
-
+//asdfghjkl;'asdfghjkl;'
     if (response.statusCode == 200 || response.statusCode == 201) {
       Map responsebody = jsonDecode(response.body);
 
