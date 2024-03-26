@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import '../../../core/services/services.dart';
 import '../../core/constant/color.dart';
-import '../../core/constant/imgaeasset.dart';
+import '../../core/constant/image_strings.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
               gradient: LinearGradient(
                 colors: [
                   AppColor.white,
-                  AppColor.yellow,
+                  AppColor.beige,
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Transform.scale(
               scale: 2,
               child: Image.asset(
-                AppImageAsset.logo,
+                AppImages.logo,
                 height: 50.h,
               ),
             ),
@@ -72,14 +72,14 @@ class _SplashScreenState extends State<SplashScreen> {
                     text: 'We',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: AppColor.lightgreen,
+                      color: AppColor.lightGreen,
                     ),
                   ),
                   TextSpan(
                     text: 'Green',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: AppColor.darkgreen,
+                      color: AppColor.green,
                     ),
                   ),
                 ],
