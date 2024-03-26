@@ -23,7 +23,6 @@ class _SplashScreenState extends State<SplashScreen> {
       // myServices.sharedPreferences.getString("token") ==  null
       //     ? Get.to(OnboardingScreen())
       //     : Get.offAll(MainScreen());
-      //jhoijl
     });
   }
 
@@ -72,14 +71,14 @@ class _SplashScreenState extends State<SplashScreen> {
                     text: 'We',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: AppColor.lightGreen,
+                      color: AppColor.green,
                     ),
                   ),
                   TextSpan(
                     text: 'Green',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: AppColor.green,
+                      color:Colors.black,
                     ),
                   ),
                 ],

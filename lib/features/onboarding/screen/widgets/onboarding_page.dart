@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
-
 import '../../../../core/constant/color.dart';
 import '../../../../core/constant/sizes.dart';
 
