@@ -20,7 +20,7 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          bg(color2: AppColor.beige,color1: AppColor.white,),
+          bg(),
           PageView(
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,

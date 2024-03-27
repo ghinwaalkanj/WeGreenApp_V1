@@ -5,15 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:we_green_v1/features/Auth/sign_up/screens/sign_up_screen.dart';
+import 'package:we_green_v1/features/Auth/sign_in/screens/sign_in_screen.dart';
 
 import '../../../../../common_widgets/custom_text_field.dart';
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/sizes.dart';
 import '../../../../../core/constant/text_strings.dart';
+import '../../../address_details/screens/address_details_screen.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({
+class SignUpForm extends StatelessWidget {
+  const SignUpForm({
     super.key,
   });
 
@@ -24,6 +25,13 @@ class LoginForm extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
+            CustomTextField(
+              labelText: 'Full name',
+              prefixIcon: Icons.person_2_outlined,
+            ),
+            const SizedBox(
+              height: TSizes.spaceBtwInputFields * 1.5,
+            ),
             CustomTextField(
               labelText: 'Email',
               prefixIcon: Icons.email_outlined,
@@ -37,33 +45,22 @@ class LoginForm extends StatelessWidget {
               isSuffixIconActive: true,
               suffixIcon: Icons.visibility_outlined,
             ),
-            Transform.translate(
-              offset: Offset(MediaQuery.of(context).size.width / 3.3, -7),
-              child: TextButton(
-                onPressed: () {},
-                child: const Text(
-                  TTexts.forgetPassword,
-                  style: TextStyle(
-                      color: AppColor.darkGrey,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12),
-                ),
-              ),
-            ),
             const SizedBox(
-              height: TSizes.spaceBtwSections / 2,
+              height: TSizes.spaceBtwSections*1.5,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 14,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(AddressDetailsScreen());
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(AppColor.green),
                 ),
                 // onPressed: () => Get.to(() => const NavigationMenu()),
                 child: const Text(
-                  TTexts.signIn,
+                  "Sign Up",
                   style: TextStyle(
                       color: AppColor.white,
                       fontSize: 18,
@@ -77,7 +74,7 @@ class LoginForm extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    "Don't have an account?",
+                    "Already have an account?",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -96,9 +93,11 @@ class LoginForm extends StatelessWidget {
                       tapTargetSize: MaterialTapTargetSize
                           .shrinkWrap, // Shrinks tap target
                     ),
-                    onPressed: () => Get.to(()=> const SignUpScreen()),
+                    onPressed: () {
+                      Get.to(SignInScreen());
+                    },
                     child: const Text(
-                      "Sign up",
+                      "Log in",
                       style: TextStyle(
                           color: AppColor.green,
                           fontWeight: FontWeight.bold,
