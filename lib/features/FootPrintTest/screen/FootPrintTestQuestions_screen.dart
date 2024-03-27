@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
+import 'package:we_green_v1/features/FootPrintTest/screen/widget/fottprint_dot_navigation.dart';
 import '../../../core/constant/image_strings.dart';
 import '../controller/FootPrintTest_controller.dart';
 
@@ -35,7 +37,7 @@ class FootPrintTestQuestionsScreen extends StatelessWidget {
             ),
             Positioned(
               top: 15.h,
-              child:  Text(
+              child: Text(
                 'Carbon FootPrint Test',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -45,7 +47,7 @@ class FootPrintTestQuestionsScreen extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-
+            FottPrintDotNavigation(),
           ],
         ),
       ),

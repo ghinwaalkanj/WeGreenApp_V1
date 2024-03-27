@@ -36,12 +36,14 @@ class AddressDetailsScreen extends StatelessWidget {
                 end: TSizes.defaultSpace,
                 bottom: TSizes.defaultSpace,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const AddressDetailsHeader(),
-                  const AddressDetailsForm(),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const AddressDetailsHeader(),
+                    const AddressDetailsForm(),
+                  ],
+                ),
               ),
             ),
           ],
