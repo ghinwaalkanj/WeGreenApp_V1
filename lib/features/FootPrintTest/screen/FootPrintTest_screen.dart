@@ -89,7 +89,7 @@ class FootPrintTestScreen extends StatelessWidget {
                 child: Text(
                   'LATER',
                   style: TextStyle(
-                      color: AppColor.black,
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 12.sp),
                 ),

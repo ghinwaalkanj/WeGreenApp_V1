@@ -19,12 +19,8 @@ class OnBoardingController extends GetxController {
 
   void nextPage() {
     if (currentPageIndex == 3) {
-      // final storage=GetStorage();
-      // storage.write('isFirstTime', false);
-      
-      //Get.offAll(const SignInScreen());
 
-      Get.offAll(const FootPrintTestScreen());
+      Get.offAll(const SignInScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
