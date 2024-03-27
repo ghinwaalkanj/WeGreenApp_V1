@@ -11,6 +11,7 @@ import '../../../../../common_widgets/custom_text_field.dart';
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/sizes.dart';
 import '../../../../../core/constant/text_strings.dart';
+import '../../../../../navigation_menu.dart';
 
 class AddressDetailsForm extends StatelessWidget {
   const AddressDetailsForm({
@@ -54,7 +55,7 @@ class AddressDetailsForm extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 14,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(AppColor.green),
                 ),
@@ -77,7 +78,7 @@ class AddressDetailsForm extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 14,
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 style: ButtonStyle(
                   side: MaterialStateProperty.all<BorderSide>(
                     BorderSide(
