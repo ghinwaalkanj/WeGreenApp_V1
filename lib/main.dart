@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'bindings/intialbindings.dart';
 import 'core/services/services.dart';
-import 'features/Splash/splash_screen.dart';
+import 'navigation_menu.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialBinding: InitialBindings(),
-        home: const SplashScreen(),
+        home: const NavigationMenu(),
       );
     });
   }
