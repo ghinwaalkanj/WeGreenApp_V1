@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-         bg(color2: AppColor.beige,color1: AppColor.white,),
+         bg(),
           Container(
             alignment: Alignment.center,
             child: Transform.scale(

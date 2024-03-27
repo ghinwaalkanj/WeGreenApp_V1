@@ -4,9 +4,7 @@ import 'package:sizer/sizer.dart';
 import '../core/constant/color.dart';
 
 class bg extends StatelessWidget {
-  const bg({super.key, required this.color1, required this.color2});
-  final Color color1;
-  final Color color2;
+  const bg({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +16,8 @@ class bg extends StatelessWidget {
         decoration:  BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              color1,
-              color2,
+              AppColor.white,
+              AppColor.darkBeige,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

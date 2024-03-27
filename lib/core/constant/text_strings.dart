@@ -31,7 +31,7 @@ class TTexts {
   static const String termsOfUse = "Terms of use";
 
 
-  // -- Authentication Headings
+  // --Authentication Headings
   static const String loginTitle = "Welcome!";
   static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
   static const String signupTitle = "Let’s create your account";
@@ -45,5 +45,8 @@ class TTexts {
   static const String yourAccountCreatedTitle = "Your account successfully created!";
   static const String yourAccountCreatedSubTitle = "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 
+  // --Address Details
+  static const String adTitle = "Address Details";
+  static const String adSubTitle = "Enter your address and stay informed about the waste collection in your street.";
 
 }
