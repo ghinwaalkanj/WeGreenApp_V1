@@ -25,8 +25,17 @@ class AppImages {
   static const String bgOnBoardingImage3 = "$rootImages/Ellipse 16.png";
   static const String bgOnBoardingImage4 = "$rootImages/Ellipse 17.png";
 
+  // --social Buttons
+  static const String facebook = "assets/images/facebook 1.png";
+  static const String google = "assets/images/google 1.png";
+  static const String twitter = "assets/images/logos 1.png";
 
-  // =============================== Lottie ========================== //
+  // --back Ground
+  static const String bg = "assets/images/bg.png";
+
+
+
+// =============================== Lottie ========================== //
   // static const String loading = "$rootLottie/loading2.json";
 
 }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
 import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_dot_navigation.dart';
 import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_next_button.dart';
 import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_page.dart';
 import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_skip.dart';
+import '../../../common_widgets/bg.dart';
+import '../../../core/constant/color.dart';
 import '../../../core/constant/text_strings.dart';
 import '../controller/onboarding_controller.dart';
 
@@ -17,6 +20,7 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          bg(),
           PageView(
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
@@ -51,6 +55,7 @@ class OnBoardingScreen extends StatelessWidget {
           const OnBoardingSkip(),
           const OnBoardingDotNavigation(),
           const OnBoardingNextButton(),
+          //
         ],
       ),
     );

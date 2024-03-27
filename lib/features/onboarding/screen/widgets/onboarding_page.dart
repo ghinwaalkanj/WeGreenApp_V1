@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
-
 import '../../../../core/constant/color.dart';
 import '../../../../core/constant/sizes.dart';
 
@@ -74,6 +73,7 @@ class OnBoardingPage extends StatelessWidget {
               color: Colors.black54,
             ),
             textAlign: TextAlign.center,
+            //
           ),
         )
       ],
