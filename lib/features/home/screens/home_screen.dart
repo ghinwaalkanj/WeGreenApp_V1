@@ -8,7 +8,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        bg()
+        bg(),
+        Image(image: AssetImage("assets/images/Ellipse 19 (1).png"),)
       ],),
     );
   }

@@ -43,11 +43,19 @@ class FootPrintTestQuestionsScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 20.sp,
                   color: AppColor.ink,
+                    shadows: [
+                Shadow(
+                color:AppColor.darkGrey,
+                    offset: Offset(3, 3),
+                blurRadius: 10,
+              ),]
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
             FottPrintDotNavigation(),
+            Row(children: [
+            ],),
           ],
         ),
       ),

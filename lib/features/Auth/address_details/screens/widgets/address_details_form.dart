@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/features/Auth/sign_in/screens/sign_in_screen.dart';
 
 import '../../../../../common_widgets/custom_text_field.dart';
@@ -49,8 +50,8 @@ class AddressDetailsForm extends StatelessWidget {
               labelText: 'Mobile',
             ),
 
-            const SizedBox(
-              height: TSizes.spaceBtwSections*2,
+             SizedBox(
+              height: 6.h,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 14,

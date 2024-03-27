@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:we_green_v1/features/onboarding/screen/onboarding_screen.dart';
 import 'bindings/intialbindings.dart';
 import 'core/services/services.dart';
 import 'features/Splash/splash_screen.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialBinding: InitialBindings(),
-        home: const SplashScreen(),
+        home: const OnBoardingScreen(),
       );
     });
   }

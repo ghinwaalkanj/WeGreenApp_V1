@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/features/Auth/address_details/screens/widgets/address_details_form.dart';
 import 'package:we_green_v1/features/Auth/address_details/screens/widgets/address_details_header.dart';
@@ -30,20 +31,18 @@ class AddressDetailsScreen extends StatelessWidget {
               image: AssetImage(AppImages.bg),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.only(
-                top: TSizes.appBarHeight * 2,
+              padding:  EdgeInsetsDirectional.only(
+                top: 8.h,
                 start: TSizes.defaultSpace,
                 end: TSizes.defaultSpace,
                 bottom: TSizes.defaultSpace,
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const AddressDetailsHeader(),
-                    const AddressDetailsForm(),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AddressDetailsHeader(),
+                  const AddressDetailsForm(),
+                ],
               ),
             ),
           ],

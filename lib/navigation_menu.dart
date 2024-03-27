@@ -21,7 +21,7 @@ class NavigationMenu extends StatelessWidget {
           onDestinationSelected: (index) =>
               controller.selectedIndex.value = index,
           backgroundColor: AppColor.white,
-          indicatorColor: AppColor.green.withOpacity(0.2),
+          indicatorColor: AppColor.beige.withOpacity(0.4),
           destinations: const [
             NavigationDestination(icon: Icon(Iconsax.home,color: AppColor.ink,), label: 'Home',),
             NavigationDestination(icon: Icon(Icons.add_circle_outline_outlined,color: AppColor.ink), label: 'Add waste',),

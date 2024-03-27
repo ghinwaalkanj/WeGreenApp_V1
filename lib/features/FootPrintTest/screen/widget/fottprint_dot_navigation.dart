@@ -17,7 +17,7 @@ class FottPrintDotNavigation extends StatelessWidget {
       top: 23.h,
       child: SizedBox(
         height: 1.5.h,
-        width: 100.w,
+        width: 116.w,
         child: ListView.separated(
           itemCount: 4,
           scrollDirection: Axis.horizontal,
