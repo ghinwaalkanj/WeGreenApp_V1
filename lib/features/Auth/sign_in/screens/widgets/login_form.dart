@@ -11,6 +11,7 @@ import '../../../../../common_widgets/custom_text_field.dart';
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/sizes.dart';
 import '../../../../../core/constant/text_strings.dart';
+import '../../../../../navigation_menu.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -57,11 +58,10 @@ class LoginForm extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 14,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(AppColor.green),
                 ),
-                // onPressed: () => Get.to(() => const NavigationMenu()),
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 child: const Text(
                   TTexts.signIn,
                   style: TextStyle(
