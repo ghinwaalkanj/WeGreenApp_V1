@@ -6,9 +6,9 @@ class TTexts {
   static const String onBoardingTitle3 = "Learn & Share";
   static const String onBoardingTitle4 = "Find Nearby Businesses";
 
-  static const String onBoardingSubTitle1 = "Check your waste with planner , set goals , challenge your self and collect rewards";
+  static const String onBoardingSubTitle1 = "Check your waste with\n planner , set goals , challenge \nyour self and collect rewards";
   static const String onBoardingSubTitle2 = "Participate & create workshops organizations or events";
-  static const String onBoardingSubTitle4 = "Map out locations and businesses like cafes, hotels,markets which are part of zero";
+  static const String onBoardingSubTitle4 = "Map out locations and businesses like cafes, hotels,markets which are part of zero waste lifestyle";
   static const String onBoardingSubTitle3 = "Are you a beginner?Don’t worry! WeGreen is your guide for green lifestyle";
 
 }

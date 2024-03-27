@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
 
 import '../../../../core/constant/color.dart';
@@ -9,7 +10,8 @@ class OnBoardingPage extends StatelessWidget {
     super.key,
     required this.image,
     required this.title,
-    required this.subtitle, required this.bg,
+    required this.subtitle,
+    required this.bg,
   });
 
   final String image;
@@ -24,13 +26,13 @@ class OnBoardingPage extends StatelessWidget {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.06,
         ),
-        Image(
+        const Image(
           image: AssetImage(AppImages.appLogo),
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.03,
         ),
-        Image(
+        const Image(
           image: AssetImage(AppImages.textLogo),
         ),
         SizedBox(
@@ -53,7 +55,10 @@ class OnBoardingPage extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 30, color: AppColor.ink),
+            fontWeight: FontWeight.bold,
+            fontSize: 22.sp,
+            color: AppColor.ink,
+          ),
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -64,7 +69,10 @@ class OnBoardingPage extends StatelessWidget {
               horizontal: MediaQuery.of(context).size.width / 8),
           child: Text(
             subtitle,
-            style: TextStyle(fontSize: 17),
+            style: TextStyle(
+              fontSize: 12.sp,
+              color: Colors.black54,
+            ),
             textAlign: TextAlign.center,
           ),
         )

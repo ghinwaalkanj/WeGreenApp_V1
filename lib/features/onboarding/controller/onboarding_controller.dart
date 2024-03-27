@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:we_green_v1/features/Auth/sign_in/screens/sign_in_screen.dart';
 
+import '../../FootPrintTest/screen/FootPrintTest_screen.dart';
+
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
 
@@ -20,7 +22,9 @@ class OnBoardingController extends GetxController {
       // final storage=GetStorage();
       // storage.write('isFirstTime', false);
       
-      Get.offAll(const SignInScreen());
+      //Get.offAll(const SignInScreen());
+
+      Get.offAll(const FootPrintTestScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);

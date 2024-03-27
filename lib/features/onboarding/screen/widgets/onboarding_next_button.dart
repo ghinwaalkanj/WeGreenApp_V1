@@ -13,7 +13,7 @@ class OnBoardingNextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: TDeviceUtils.getBottomNavigationBarHeight(),
+      bottom: TDeviceUtils.getBottomNavigationBarHeight()-25,
       right: TSizes.defaultSpace,
       child: ElevatedButton(
         onPressed: () => OnBoardingController.instance.nextPage(),
