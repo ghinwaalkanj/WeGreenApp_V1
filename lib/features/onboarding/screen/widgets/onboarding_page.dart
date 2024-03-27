@@ -65,6 +65,7 @@ class OnBoardingPage extends StatelessWidget {
             subtitle,
             style: TextStyle(fontSize: 17),
             textAlign: TextAlign.center,
+            //
           ),
         )
       ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import '../../../core/services/services.dart';
+import '../../common_widgets/bg.dart';
 import '../../core/constant/color.dart';
 import '../../core/constant/image_strings.dart';
 
@@ -23,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
       // myServices.sharedPreferences.getString("token") ==  null
       //     ? Get.to(OnboardingScreen())
       //     : Get.offAll(MainScreen());
+      //
     });
   }
 
@@ -33,21 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          Container(
-            alignment: Alignment.center,
-            height: 100.h,
-            width: 100.w,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  AppColor.white,
-                  AppColor.beige,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-          ),
+         bg(color2: AppColor.beige,color1: AppColor.white,),
           Container(
             alignment: Alignment.center,
             child: Transform.scale(

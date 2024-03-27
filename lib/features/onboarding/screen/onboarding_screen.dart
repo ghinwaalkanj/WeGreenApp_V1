@@ -6,6 +6,7 @@ import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_dot_na
 import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_next_button.dart';
 import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_page.dart';
 import 'package:we_green_v1/features/onboarding/screen/widgets/onboarding_skip.dart';
+import '../../../common_widgets/bg.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/constant/text_strings.dart';
 import '../controller/onboarding_controller.dart';
@@ -19,22 +20,7 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            alignment: Alignment.center,
-            height: 100.h,
-            width: 100.w,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  AppColor.white,
-                  AppColor.beige,
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
-            ),
-          ),
-
+          bg(color2: AppColor.beige,color1: AppColor.white,),
           PageView(
             controller: controller.pageController,
             onPageChanged: controller.updatePageIndicator,
@@ -69,6 +55,7 @@ class OnBoardingScreen extends StatelessWidget {
           const OnBoardingSkip(),
           const OnBoardingDotNavigation(),
           const OnBoardingNextButton(),
+          //
         ],
       ),
     );
