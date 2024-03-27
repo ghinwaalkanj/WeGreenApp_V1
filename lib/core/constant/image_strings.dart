@@ -7,6 +7,8 @@ class AppImages {
    static const String howbig = "$rootImages/howbig.png";
    static const String co2 = "$rootImages/co2.png";
    static const String co2text = "$rootImages/co2text.png";
+   static const String appbar = "$rootImages/appbar.png";
+   static const String notification = "$rootImages/notification.png";
 
   // -- App Logos
   static const String appLogo = "$rootImages/vecteezy_eco-green-leaf-icon-bio-nature-green-eco-symbol-for-web-and_-removebg-preview 1.png";
