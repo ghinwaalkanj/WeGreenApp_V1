@@ -12,7 +12,7 @@ import '../../../core/constant/text_strings.dart';
 import '../controller/onboarding_controller.dart';
 
 class OnBoardingScreen extends StatelessWidget {
-  const OnBoardingScreen({Key? key}) : super(key: key);
+  const OnBoardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
