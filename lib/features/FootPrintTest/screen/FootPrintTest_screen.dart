@@ -58,7 +58,7 @@ class FootPrintTestScreen extends StatelessWidget {
               child: GestureDetector(
 
                 onTap: (){
-                  Get.to(const NavigationMenu());
+                  Get.to(const FootPrintTestQuestionsScreen());
 
                 },
                 child: Container(
