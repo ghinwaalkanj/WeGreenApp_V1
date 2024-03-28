@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/get_utils.dart';
+import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/features/Auth/sign_in/screens/widgets/login_form.dart';
 import 'package:we_green_v1/features/Auth/sign_in/screens/widgets/login_header.dart';
@@ -28,8 +29,8 @@ class SignUpScreen extends StatelessWidget {
               image: AssetImage(AppImages.bg),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.only(
-                top: TSizes.appBarHeight * 3,
+              padding:  EdgeInsetsDirectional.only(
+                top: 16.h,
                 start: TSizes.defaultSpace,
                 end: TSizes.defaultSpace,
                 bottom: TSizes.defaultSpace,
@@ -51,5 +52,6 @@ class SignUpScreen extends StatelessWidget {
         ),
       ),
     );
+    ///
   }
 }

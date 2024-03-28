@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:we_green_v1/features/FootPrintTest/screen/footprint_test_calculating_screen.dart';
 
-abstract class FootPrintTestController extends GetxController {
 
-}
-
-class FootPrintTestControllerImp extends FootPrintTestController {
+class FootPrintController extends GetxController {
+  static FootPrintController get instance => Get.find();
 
 
   final pageController = PageController();
@@ -13,30 +12,23 @@ class FootPrintTestControllerImp extends FootPrintTestController {
 
   void updatePageIndicator(index) => currentPageIndex.value = index;
 
-  void dotNavigationClick(index) {
-    currentPageIndex.value = index;
-    pageController.jumpTo(index);
-  }
-
   void nextPage() {
     if (currentPageIndex == 3) {
-
-      //Get.offAll(const SignInScreen());
+      Get.to(const FootPrintTestCalculating());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);
     }
   }
 
-
-
-  @override
-  void onInit() async {
-    super.onInit();
+  void previousPage() {
+      int page = currentPageIndex.value - 1;
+      pageController.jumpToPage(page);
   }
 
   @override
-  void dispose() {
-    super.dispose();
+  void onClose() {
+    pageController.dispose(); // Dispose the PageController when the controller is closed
+    super.onClose();
   }
 }

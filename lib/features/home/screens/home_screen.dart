@@ -18,6 +18,10 @@ class HomeScreen extends StatelessWidget {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
+      body: Stack(children: [
+        bg(),
+        Image(image: AssetImage("assets/images/Ellipse 19 (1).png"),)
+      ],),
       key: scaffoldKey,
       drawer: const MyDrawer(),
       body: Stack(

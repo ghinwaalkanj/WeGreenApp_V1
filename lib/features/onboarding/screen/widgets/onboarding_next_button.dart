@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import '../../../../core/constant/sizes.dart';
 import '../../../../core/device/device_utility.dart';
@@ -13,7 +14,7 @@ class OnBoardingNextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: TDeviceUtils.getBottomNavigationBarHeight()-25,
+      bottom: 4.h,
       right: TSizes.defaultSpace,
       child: ElevatedButton(
         onPressed: () => OnBoardingController.instance.nextPage(),

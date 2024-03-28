@@ -31,20 +31,18 @@ class AddressDetailsScreen extends StatelessWidget {
               image: AssetImage(AppImages.bg),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.only(
-                top: TSizes.appBarHeight * 2,
+              padding:  EdgeInsetsDirectional.only(
+                top: 12.h,
                 start: TSizes.defaultSpace,
                 end: TSizes.defaultSpace,
                 bottom: TSizes.defaultSpace,
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const AddressDetailsHeader(),
-                    const AddressDetailsForm(),
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AddressDetailsHeader(),
+                  const AddressDetailsForm(),
+                ],
               ),
             ),
           ],

@@ -67,7 +67,7 @@ class FootPrintTestScreen extends StatelessWidget {
                   width: 85.w,
                   decoration: BoxDecoration(
                       color: AppColor.green,
-                      borderRadius: BorderRadius.circular(25.sp)),
+                      borderRadius: BorderRadius.circular(25.sp),),
                   child: Text(
                     'START',
                     style: TextStyle(
@@ -109,3 +109,4 @@ class FootPrintTestScreen extends StatelessWidget {
     );
   }
 }
+///
