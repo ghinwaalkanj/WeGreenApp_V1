@@ -9,7 +9,7 @@ class SignUpHeader extends StatelessWidget {
   const SignUpHeader({
     super.key,
   });
-
+///
   @override
   Widget build(BuildContext context) {
     return Column(

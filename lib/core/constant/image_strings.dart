@@ -43,7 +43,7 @@ class AppImages {
   // --back Ground
   static const String bg = "assets/images/bg.png";
 
-
+  // --footprint test
 
 // =============================== Lottie ========================== //
   // static const String loading = "$rootLottie/loading2.json";
