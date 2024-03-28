@@ -49,17 +49,16 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    top: 35.h,
-                    child: Container(
-                      height: 5.h,
-                      child: ListView.builder(
-                        itemCount: 4,
-                          itemBuilder: (BuildContext context,int index){
-
-                      }),
-                    )
-                  ),
+                  // Positioned(
+                  //   top: 35.h,
+                  //   child: Container(
+                  //     height: 5.h,
+                  //     child: ListView.builder(
+                  //       itemCount: 4,
+                  //         itemBuilder: (BuildContext context,int index){
+                  //     }),
+                  //   )
+                  // ),
                 ],
               ),
             ),

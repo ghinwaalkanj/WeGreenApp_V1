@@ -56,18 +56,17 @@ class FootPrintTestScreen extends StatelessWidget {
             Positioned(
               top: 80.h,
               child: GestureDetector(
-
-                onTap: (){
+                onTap: () {
                   Get.to(const FootPrintTestQuestionsScreen());
-
                 },
                 child: Container(
                   alignment: Alignment.center,
                   height: 7.h,
                   width: 85.w,
                   decoration: BoxDecoration(
-                      color: AppColor.green,
-                      borderRadius: BorderRadius.circular(25.sp),),
+                    color: AppColor.green,
+                    borderRadius: BorderRadius.circular(25.sp),
+                  ),
                   child: Text(
                     'START',
                     style: TextStyle(
@@ -109,4 +108,5 @@ class FootPrintTestScreen extends StatelessWidget {
     );
   }
 }
+
 ///

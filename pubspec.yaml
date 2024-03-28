@@ -20,6 +20,7 @@ dependencies:
   shared_preferences:
   smooth_page_indicator:
   iconsax:
+  table_calendar:
 
 dev_dependencies:
   flutter_test:

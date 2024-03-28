@@ -56,7 +56,7 @@ class FootPrintTestResultScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: 2.h,
+                  height: 1.h,
                 ),
                 DetailResult(
                   image:
@@ -91,15 +91,22 @@ class FootPrintTestResultScreen extends StatelessWidget {
                 ),
                 MaterialButton(
                   height: 6.h,
-                    minWidth: 44.w,
-                    color: AppColor.green,
-                    onPressed: () {
-                  Get.to(NavigationMenu());
-                },
-                    shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30), // Set border radius
-          ),
-      child: Text("LET'S GO",style: TextStyle(color: AppColor.white,fontSize: 14.sp,fontWeight: FontWeight.bold),),
+                  minWidth: 44.w,
+                  color: AppColor.green,
+                  onPressed: () {
+                    Get.to(NavigationMenu());
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius:
+                        BorderRadius.circular(30), // Set border radius
+                  ),
+                  child: Text(
+                    "LET'S GO",
+                    style: TextStyle(
+                        color: AppColor.white,
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
@@ -119,9 +126,9 @@ class AppDivder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Divider(
       color: AppColor.green.withOpacity(0.2),
-      thickness: 1.h,
-      indent: 2.w,
-      endIndent: 2.w,
+      thickness: 0.8.h,
+      indent: 0.w,
+      endIndent: 0.w,
     );
   }
 }
@@ -140,37 +147,40 @@ class DetailResult extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image(
-          image: AssetImage(image),
-        ),
-        SizedBox(
-          width: 5.w,
-        ),
-        Text(
-          title,
-          style: TextStyle(
-              color: AppColor.green,
-              fontWeight: FontWeight.bold,
-              fontSize: 13.sp),
-        ),
-        SizedBox(
-          width: 20.w,
-        ),
-        Text(
-          "${percentage} %",
-          style: TextStyle(fontSize: 16.sp),
-        ),
-        SizedBox(
-          width: 2.h,
-        ),
-        Icon(
-          Icons.arrow_forward_ios_sharp,
-          size: 12.sp,
-          color: AppColor.grey,
-        ),
-      ],
+    return FittedBox(
+      child: Row(
+        children: [
+          Image(
+            image: AssetImage(image),
+            height: 8.h,
+          ),
+          SizedBox(
+            width: 5.w,
+          ),
+          Text(
+            title,
+            style: TextStyle(
+                color: AppColor.green,
+                fontWeight: FontWeight.bold,
+                fontSize: 13.sp),
+          ),
+          SizedBox(
+            width: 20.w,
+          ),
+          Text(
+            "${percentage} %",
+            style: TextStyle(fontSize: 16.sp),
+          ),
+          SizedBox(
+            width: 2.h,
+          ),
+          Icon(
+            Icons.arrow_forward_ios_sharp,
+            size: 12.sp,
+            color: AppColor.grey,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -199,7 +209,7 @@ class result extends StatelessWidget {
       ),
       child: Center(
         child: Padding(
-          padding: EdgeInsets.only(top: 4.w),
+          padding: EdgeInsets.only(top: 2.5.h),
           child: Column(
             children: [
               Text(

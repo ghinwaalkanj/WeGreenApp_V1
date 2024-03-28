@@ -55,10 +55,12 @@ class CustomAppBar extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 11.h,
-          child: Image.asset(
-            image,
-            height: 25.h,
+          top: 12.h,
+          child: Transform.scale(
+            scale: 1.3,
+            child: Image.asset(
+              image,
+            ),
           ),
         ),
       ],

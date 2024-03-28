@@ -11,6 +11,9 @@ class AppImages {
    static const String notification = "$rootImages/notification.png";
    static const String gridview = "$rootImages/gridvieww.png";
    static const String profile = "$rootImages/profile.png";
+   static const String cwaste = "$rootImages/cwaste.png";
+   static const String gdata = "$rootImages/gdata.png";
+   static const String challenges = "$rootImages/challenges.png";
 
 
    static const String waste = "$rootImages/waste.png";
