@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import '../../../core/constant/image_strings.dart';
+import '../../../navigation_menu.dart';
 import 'FootPrintTestQuestions_screen.dart';
 
 class FootPrintTestScreen extends StatelessWidget {
@@ -57,7 +58,7 @@ class FootPrintTestScreen extends StatelessWidget {
               top: 80.h,
               child: GestureDetector(
                 onTap: (){
-                  Get.to(const FootPrintTestQuestionsScreen());
+                  Get.to(const NavigationMenu());
                 },
                 child: Container(
                   alignment: Alignment.center,

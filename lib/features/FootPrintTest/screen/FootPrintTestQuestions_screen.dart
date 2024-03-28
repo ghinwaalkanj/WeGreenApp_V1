@@ -4,7 +4,6 @@ import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import '../../../core/constant/image_strings.dart';
 import '../controller/FootPrintTest_controller.dart';
-import 'FootPrintTestQuestions_screen2.dart';
 
 class FootPrintTestQuestionsScreen extends StatelessWidget {
   const FootPrintTestQuestionsScreen({super.key});
@@ -14,13 +13,40 @@ class FootPrintTestQuestionsScreen extends StatelessWidget {
     final controller = Get.put(FootPrintTestControllerImp());
 
     return Scaffold(
-      body: GestureDetector(
-        onTap: (){
-          Get.to(FootPrintTestQuestionsScreen2());
-        },
-        child: Container(
-          height: 100.h,
-          child: Image.asset(AppImages.test1),
+      body: Container(
+        height: 100.h,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              AppColor.white,
+              AppColor.beige,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            Transform.scale(
+              scale: 2.5,
+              origin: Offset(0, 23.h),
+              child: Image.asset(AppImages.leaves),
+            ),
+            Positioned(
+              top: 15.h,
+              child:  Text(
+                'Carbon FootPrint Test',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.sp,
+                  color: AppColor.ink,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+          ],
         ),
       ),
     );
