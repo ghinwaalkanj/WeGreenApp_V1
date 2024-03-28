@@ -11,7 +11,6 @@ class FootPrintTestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         height: 100.h,
@@ -57,8 +56,10 @@ class FootPrintTestScreen extends StatelessWidget {
             Positioned(
               top: 80.h,
               child: GestureDetector(
+
                 onTap: (){
                   Get.to(const NavigationMenu());
+
                 },
                 child: Container(
                   alignment: Alignment.center,
@@ -70,29 +71,35 @@ class FootPrintTestScreen extends StatelessWidget {
                   child: Text(
                     'START',
                     style: TextStyle(
-                        color: AppColor.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12.sp),
+                      color: AppColor.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.sp,
+                    ),
                   ),
                 ),
               ),
             ),
             Positioned(
               top: 89.h,
-              child: Container(
-                alignment: Alignment.center,
-                height: 7.h,
-                width: 85.w,
-                decoration: BoxDecoration(
-                    color: AppColor.white,
-                    borderRadius: BorderRadius.circular(25.sp),
-                    border: Border.all(color: Colors.black54, width: 0.3.w)),
-                child: Text(
-                  'LATER',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 12.sp),
+              child: GestureDetector(
+                onTap: () {
+                  Get.to(const NavigationMenu());
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 7.h,
+                  width: 85.w,
+                  decoration: BoxDecoration(
+                      color: AppColor.white,
+                      borderRadius: BorderRadius.circular(25.sp),
+                      border: Border.all(color: Colors.black54, width: 0.3.w)),
+                  child: Text(
+                    'LATER',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.sp),
+                  ),
                 ),
               ),
             ),
