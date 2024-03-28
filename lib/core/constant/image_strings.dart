@@ -7,6 +7,21 @@ class AppImages {
    static const String howbig = "$rootImages/howbig.png";
    static const String co2 = "$rootImages/co2.png";
    static const String co2text = "$rootImages/co2text.png";
+   static const String appbar = "$rootImages/appbar.png";
+   static const String notification = "$rootImages/notification.png";
+   static const String gridview = "$rootImages/gridvieww.png";
+
+
+   static const String test1 = "$rootImages/test1.jpg";
+   static const String test2 = "$rootImages/test2.jpg";
+   static const String test3 = "$rootImages/test3.jpg";
+   static const String test4 = "$rootImages/test4.jpg";
+
+
+   static const String waste = "$rootImages/waste.png";
+   static const String learn = "$rootImages/learn.png";
+   static const String meet = "$rootImages/meet.png";
+   static const String points = "$rootImages/points.png";
 
   // -- App Logos
   static const String appLogo = "$rootImages/vecteezy_eco-green-leaf-icon-bio-nature-green-eco-symbol-for-web-and_-removebg-preview 1.png";
