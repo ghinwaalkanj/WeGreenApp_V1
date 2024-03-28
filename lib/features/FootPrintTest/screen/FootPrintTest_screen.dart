@@ -56,8 +56,10 @@ class FootPrintTestScreen extends StatelessWidget {
             Positioned(
               top: 80.h,
               child: GestureDetector(
-                onTap: () {
-                  Get.to(const FootPrintTestQuestionsScreen());
+
+                onTap: (){
+                  Get.to(const NavigationMenu());
+
                 },
                 child: Container(
                   alignment: Alignment.center,
