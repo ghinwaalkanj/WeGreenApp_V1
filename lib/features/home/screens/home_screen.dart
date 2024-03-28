@@ -145,40 +145,45 @@ class HomeScreen extends StatelessWidget {
                           mainAxisSpacing: 1.h,
                         ),
                         itemBuilder: (BuildContext context, int index) {
-                          return Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.all(8.0),
-                                padding: EdgeInsets.only(bottom: 3.h),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15.sp),
-                                  color: Colors.white,
-                                ),
-                                width: 40.w,
-                                child: Image.asset(DataLists.imagePaths[index]),
-                              ),
-                              Positioned(
-                                bottom: 0.h,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  height: 5.h,
-                                  width: 40.w,
+                          return GestureDetector(
+                            onTap: (){
+                              Get.to(DataLists.routs[index]);
+                            },
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.all(8.0),
+                                  padding: EdgeInsets.only(bottom: 3.h),
                                   decoration: BoxDecoration(
-                                    color: AppColor.ink,
-                                    borderRadius: BorderRadius.vertical(
-                                        bottom: Radius.circular(15.sp)),
+                                    borderRadius: BorderRadius.circular(15.sp),
+                                    color: Colors.white,
                                   ),
-                                  child: Text(
-                                    DataLists.texts[index],
-                                    style: TextStyle(
-                                      color: AppColor.white,
-                                      fontSize: 12.sp,
+                                  width: 40.w,
+                                  child: Image.asset(DataLists.imagePaths[index]),
+                                ),
+                                Positioned(
+                                  bottom: 0.h,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    height: 5.h,
+                                    width: 40.w,
+                                    decoration: BoxDecoration(
+                                      color: AppColor.ink,
+                                      borderRadius: BorderRadius.vertical(
+                                          bottom: Radius.circular(15.sp)),
+                                    ),
+                                    child: Text(
+                                      DataLists.texts[index],
+                                      style: TextStyle(
+                                        color: AppColor.white,
+                                        fontSize: 12.sp,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           );
                         },
                       ),
