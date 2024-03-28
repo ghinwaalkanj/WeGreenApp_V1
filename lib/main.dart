@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:we_green_v1/features/Splash/splash_screen.dart';
 import 'bindings/intialbindings.dart';
 import 'core/services/services.dart';
-import 'navigation_menu.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialBinding: InitialBindings(),
-        home: const NavigationMenu(),
+        home: const SplashScreen(),
       );
     });
   }

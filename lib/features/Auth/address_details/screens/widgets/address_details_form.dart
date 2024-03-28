@@ -12,6 +12,7 @@ import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/sizes.dart';
 import '../../../../../core/constant/text_strings.dart';
 import '../../../../../navigation_menu.dart';
+import '../../../../FootPrintTest/screen/FootPrintTest_screen.dart';
 
 class AddressDetailsForm extends StatelessWidget {
   const AddressDetailsForm({
@@ -55,7 +56,7 @@ class AddressDetailsForm extends StatelessWidget {
               height: MediaQuery.of(context).size.height / 14,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () => Get.to(() => const NavigationMenu()),
+                onPressed: () => Get.to(() => const FootPrintTestScreen()),
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(AppColor.green),
                 ),

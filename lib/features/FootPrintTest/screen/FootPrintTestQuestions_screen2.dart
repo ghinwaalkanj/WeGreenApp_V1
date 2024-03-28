@@ -4,10 +4,10 @@ import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import '../../../core/constant/image_strings.dart';
 import '../controller/FootPrintTest_controller.dart';
-import 'FootPrintTestQuestions_screen2.dart';
+import 'FootPrintTestQuestions_screen3.dart';
 
-class FootPrintTestQuestionsScreen extends StatelessWidget {
-  const FootPrintTestQuestionsScreen({super.key});
+class FootPrintTestQuestionsScreen2 extends StatelessWidget {
+  const FootPrintTestQuestionsScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +16,11 @@ class FootPrintTestQuestionsScreen extends StatelessWidget {
     return Scaffold(
       body: GestureDetector(
         onTap: (){
-          Get.to(FootPrintTestQuestionsScreen2());
+          Get.to(FootPrintTestQuestionsScreen3());
         },
         child: Container(
           height: 100.h,
-          child: Image.asset(AppImages.test1),
+          child: Image.asset(AppImages.test2),
         ),
       ),
     );
