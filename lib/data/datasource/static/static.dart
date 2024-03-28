@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../../../core/constant/image_strings.dart';
 
 class DataLists {
@@ -14,4 +16,5 @@ class DataLists {
     AppImages.meet,
     AppImages.points,
   ];
+
 }

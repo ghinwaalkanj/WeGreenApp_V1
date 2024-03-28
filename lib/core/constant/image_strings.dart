@@ -10,12 +10,7 @@ class AppImages {
    static const String appbar = "$rootImages/appbar.png";
    static const String notification = "$rootImages/notification.png";
    static const String gridview = "$rootImages/gridvieww.png";
-
-
-   static const String test1 = "$rootImages/test1.jpg";
-   static const String test2 = "$rootImages/test2.jpg";
-   static const String test3 = "$rootImages/test3.jpg";
-   static const String test4 = "$rootImages/test4.jpg";
+   static const String profile = "$rootImages/profile.png";
 
 
    static const String waste = "$rootImages/waste.png";

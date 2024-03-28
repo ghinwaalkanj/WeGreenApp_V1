@@ -9,4 +9,7 @@ class AppLink {
 // static const String signIn = "$server/auth/login.php";
 
 // ================================= Home ========================== //
+
+ static const String upcoming = "$server/upcomings/upcomings.php";
+
 }

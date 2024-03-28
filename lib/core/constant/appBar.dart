@@ -9,11 +9,13 @@ import 'image_strings.dart';
 class CustomAppBar extends StatelessWidget {
   final String image;
   final VoidCallback onPressed;
+  final VoidCallback onTap;
 
   const CustomAppBar({
     super.key,
     required this.image,
     required this.onPressed,
+    required this.onTap,
   });
 
   @override
@@ -45,14 +47,18 @@ class CustomAppBar extends StatelessWidget {
         Positioned(
           top: 5.h,
           right: 5.w,
-          child: Image.asset(
-            AppImages.notification,
+          child: GestureDetector(
+            onTap: onTap,
+            child: Image.asset(
+              AppImages.notification,
+            ),
           ),
         ),
         Positioned(
-          top: 15.h,
+          top: 11.h,
           child: Image.asset(
             image,
+            height: 25.h,
           ),
         ),
       ],
