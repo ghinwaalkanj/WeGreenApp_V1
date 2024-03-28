@@ -4,6 +4,7 @@ class AppColor {
   // App theme colors
   static const Color green = Color(0xFF75AC1C);
   static const Color lightGreen = Color(0xFFEDF2DB);
+  static const Color darkGreen = Color(0xFF35521B);
   static const Color beige = Color(0xFFFCEFCF);
   static const Color darkBeige = Color(0xfffaf2ac);
   static const Color ink = Color(0xFF004A74);

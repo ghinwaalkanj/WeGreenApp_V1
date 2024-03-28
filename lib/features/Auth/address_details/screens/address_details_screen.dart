@@ -32,7 +32,7 @@ class AddressDetailsScreen extends StatelessWidget {
             ),
             Padding(
               padding:  EdgeInsetsDirectional.only(
-                top: 8.h,
+                top: 12.h,
                 start: TSizes.defaultSpace,
                 end: TSizes.defaultSpace,
                 bottom: TSizes.defaultSpace,

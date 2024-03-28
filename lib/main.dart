@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialBinding: InitialBindings(),
-        home: const OnBoardingScreen(),
+        home: const SplashScreen(),
       );
     });
   }
