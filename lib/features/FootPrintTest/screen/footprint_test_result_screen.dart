@@ -94,11 +94,11 @@ class FootPrintTestResultScreen extends StatelessWidget {
                   minWidth: 44.w,
                   color: AppColor.green,
                   onPressed: () {
-                    Get.to(NavigationMenu());
+                    Get.offAll(NavigationMenu());
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius:
-                        BorderRadius.circular(30), // Set border radius
+                        BorderRadius.circular(30),
                   ),
                   child: Text(
                     "LET'S GO",
