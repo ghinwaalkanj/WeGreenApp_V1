@@ -64,28 +64,28 @@ class FootPrintTestResultScreen extends StatelessWidget {
                   title: 'Travel',
                   percentage: '13',
                 ),
-                AppDivder(),
+                AppDivder(thickness: 0.8.h, indent: 0.w, endIndent: 0.w,),
                 DetailResult(
                   image:
                       'assets/images/Screenshot__365_-removebg-preview 1.png',
                   title: 'Stuff',
                   percentage: '31',
                 ),
-                AppDivder(),
+                AppDivder(thickness: 0.8.h, indent: 0.w, endIndent: 0.w,),
                 DetailResult(
                   image:
                       'assets/images/Screenshot__367_-removebg-preview 1.png',
                   title: 'Home',
                   percentage: '33',
                 ),
-                AppDivder(),
+                AppDivder(thickness: 0.8.h, indent: 0.w, endIndent: 0.w,),
                 DetailResult(
                   image:
                       'assets/images/Screenshot__368_-removebg-preview 1.png',
                   title: 'Food',
                   percentage: '23',
                 ),
-                AppDivder(),
+                AppDivder(thickness: 0.8.h, indent: 0.w, endIndent: 0.w,),
                 SizedBox(
                   height: 3.h,
                 ),
@@ -118,17 +118,19 @@ class FootPrintTestResultScreen extends StatelessWidget {
 }
 
 class AppDivder extends StatelessWidget {
-  const AppDivder({
-    super.key,
+   AppDivder({
+    super.key,  required this.thickness, required this.indent, required this.endIndent,
   });
-
+  final double thickness;
+  final double indent;
+  final double endIndent;
   @override
   Widget build(BuildContext context) {
     return Divider(
       color: AppColor.green.withOpacity(0.2),
-      thickness: 0.8.h,
-      indent: 0.w,
-      endIndent: 0.w,
+      thickness: thickness,
+      indent: indent,
+      endIndent: endIndent,
     );
   }
 }

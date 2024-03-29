@@ -9,31 +9,33 @@ import 'package:we_green_v1/features/FootPrintTest/controller/FootPrintTest_cont
 
 class FootPrintNextButton extends StatelessWidget {
   const FootPrintNextButton({
-    super.key,
+    super.key, required this.color, required this.bottom,required this.onTap
   });
-
+  final Color color;
+  final double bottom;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Positioned(
       right: 14.w,
-      bottom: 15.h,
+      bottom: bottom,
       child: Row(
         children: [
           GestureDetector(
-            onTap: ()=>FootPrintController.instance.nextPage(),
+            onTap: onTap,
             child: Text(
               "next",
               style: TextStyle(
                   fontSize: 12.sp,
                   fontWeight: FontWeight.w600,
-                  color: AppColor.darkGreen),
+                  color: color),
             ),
           ),
           GestureDetector(
-            onTap: ()=>FootPrintController.instance.nextPage(),
+            onTap: onTap,
               child: Icon(
             Icons.arrow_forward,
-            color: AppColor.darkGreen,
+            color:color,
           )),
         ],
       ),
