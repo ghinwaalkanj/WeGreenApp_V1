@@ -9,11 +9,12 @@ import '../../../core/class/statusrequest.dart';
 import '../../../core/services/handingdatacontroller.dart';
 import '../../../core/services/services.dart';
 import '../../../data/datasource/remote/home_data.dart';
+import '../../../data/datasource/remote/points_data.dart';
 
 abstract class PointsController extends GetxController {}
 
 class PointsControllerImp extends PointsController {
-  HomeData homeData = HomeData(Get.find());
+  PointsData pointsData = PointsData(Get.find());
   MyServices myServices = Get.find();
   StatusRequest statusRequest = StatusRequest.none;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -25,6 +26,32 @@ class PointsControllerImp extends PointsController {
   );
   List<Marker> markers = [];
 
+  List catigory = [];
+
+
+  getCatigory() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await pointsData.catigory();
+    if (StatusRequest.success == handlingData(response)) {
+      Map mapData = {};
+      mapData.addAll(response);
+      if (mapData["status"] == true) {
+        statusRequest = StatusRequest.success;
+        update();
+        catigory = [];
+        catigory = mapData['data'];
+        return true;
+      } else {
+        catigory = [];
+        statusRequest = StatusRequest.success;
+        update();
+      }
+    } else if (statusRequest == StatusRequest.offlinefailure) {
+      return Get.snackbar("فشل", "you are not online please check on it");
+    } else if (statusRequest == StatusRequest.serverfailure) {}
+  }
+
 
   void updatecat(int num){
     cat.value = num;
@@ -34,6 +61,7 @@ class PointsControllerImp extends PointsController {
 
   @override
   void onInit() {
+    getCatigory();
     controllerCompleter = Completer<GoogleMapController>();
     super.onInit();
   }

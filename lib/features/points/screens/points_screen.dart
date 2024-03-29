@@ -184,13 +184,13 @@ class PointsScreen extends StatelessWidget {
                                 children: [
                                   Container(
                                     height: 5.h,
-                                    child: Image.asset(AppImages.recycle),
+                                    child: Image.network('https://wegreen.000webhostapp.com/upload/posts/${controller.catigory[index]['categories_image']}'),
                                   ),
                                   SizedBox(
                                     height: 0.5.h,
                                   ),
                                   Text(
-                                    'recycle',
+                                    '${controller.catigory[index]['categories_title']}',
                                     style: TextStyle(
                                       color: AppColor.ink,
                                       fontWeight: FontWeight.w500,
@@ -207,7 +207,7 @@ class PointsScreen extends StatelessWidget {
                             width: 3.w,
                           );
                         },
-                        itemCount: 5,
+                        itemCount: controller.catigory.length,
                       ),
                     ),
                   ),

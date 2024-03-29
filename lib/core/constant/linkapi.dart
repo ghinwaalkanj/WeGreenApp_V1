@@ -11,5 +11,9 @@ class AppLink {
 // ================================= Home ========================== //
 
  static const String upcoming = "$server/upcomings/upcomings.php";
+ static const String posts = "$server/posts/general_posts.php";
+ static const String catigory = "$server/catigories/view.php";
+ static const String signIn = "$server/auth/login.php";
+ static const String signUp = "$server/auth/signup.php";
 
 }

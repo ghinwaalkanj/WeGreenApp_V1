@@ -12,6 +12,7 @@ import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/sizes.dart';
 import '../../../../../core/constant/text_strings.dart';
 import '../../../../../navigation_menu.dart';
+import '../../controller/signin_controller.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({
@@ -20,7 +21,11 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
+    Get.put(SignInControllerImp());
+
+    return GetBuilder<SignInControllerImp>(
+        builder: (controller) =>  Form(
+          key: controller.form,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
@@ -28,6 +33,7 @@ class LoginForm extends StatelessWidget {
             CustomTextField(
               labelText: 'Email',
               prefixIcon: Icons.email_outlined,
+              controller: controller.email,
             ),
             const SizedBox(
               height: TSizes.spaceBtwInputFields * 1.5,
@@ -37,6 +43,8 @@ class LoginForm extends StatelessWidget {
               prefixIcon: Icons.lock_outline_rounded,
               isSuffixIconActive: true,
               suffixIcon: Icons.visibility_outlined,
+              controller: controller.password,
+
             ),
             Transform.translate(
               offset: Offset(MediaQuery.of(context).size.width / 3.3, -7),
@@ -61,7 +69,7 @@ class LoginForm extends StatelessWidget {
                 style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(AppColor.green),
                 ),
-                onPressed: () => Get.to(() => const NavigationMenu()),
+                onPressed: () => controller.signIn(context),
                 child: const Text(
                   TTexts.signIn,
                   style: TextStyle(
@@ -111,7 +119,7 @@ class LoginForm extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
+
   }
 }
-///

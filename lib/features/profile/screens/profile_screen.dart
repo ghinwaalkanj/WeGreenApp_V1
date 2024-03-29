@@ -13,6 +13,7 @@ import '../../../core/constant/color.dart';
 import '../../../core/constant/image_strings.dart';
 import '../../../core/constant/loading_screen.dart';
 import '../../add_waste/screens/add_your_waste_2.dart';
+import '../../challenges/screens/challenges_screen.dart';
 import '../controller/profile_controller.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -126,14 +127,19 @@ class ProfileScreen extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  GoalsInfoContainer(
-                                    widget: Icon(
-                                      Icons.add,
-                                      color: AppColor.white,
-                                      size: 12.sp,
+                                  GestureDetector(
+                                    onTap: (){
+                                      Get.to(ChallengesScreen());
+                                    },
+                                    child: GoalsInfoContainer(
+                                      widget: Icon(
+                                        Icons.add,
+                                        color: AppColor.white,
+                                        size: 12.sp,
+                                      ),
+                                      title: 'Add Goal',
+                                      color: AppColor.green,
                                     ),
-                                    title: 'Add Goal',
-                                    color: AppColor.green,
                                   ),
                                   SizedBox(
                                     width: 3.h,

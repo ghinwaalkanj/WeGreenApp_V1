@@ -229,16 +229,98 @@ class LearnScreen extends StatelessWidget {
                   ),
                   Positioned(
                     top: 46.h,
-                    child: PostList(
-                      title: 'WHATS IS ZERO WASTES ?',
-                      tagline: 'Deep Learning Resource',
-                      addtag: 'By WeGreen',
-                      content:
-                          'Waste   sorting   is   the  process  by   which',
-                      image: Image.asset('assets/images/img1.png'),
-                      onPressed: () {
-                        Get.to(PostDetailsScreen());
-                      },
+                    child: Container(
+                      width: 85.w,
+                      padding: EdgeInsets.only(top: 1.h),
+                      height: 50.h,
+                      child: ListView.separated(
+                        itemBuilder: (BuildContext context, int index) {
+                          return GestureDetector(
+                            onTap: (){
+                              Get.to(PostDetailsScreen());
+                            },
+                            child: Container(
+                              height: 13.h,
+                              width: 10.h,
+                              margin: EdgeInsets.symmetric(horizontal: 1.w),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10.sp),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(1, 1),
+                                      blurRadius: 5,
+                                    )
+                                  ]),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.only(left: 3.w),
+                                    height: 7.h,
+                                    child: Image.network('https://wegreen.000webhostapp.com/upload/posts/${controller.posts[index]['posts_image']}'),
+                                  ),
+                                  SizedBox(
+                                    width: 2.w,
+                                  ),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        controller.posts[index]['posts_title'],
+                                        style: TextStyle(
+                                          color: AppColor.green,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 11.sp,
+                                        ),
+                                      ),
+                                      Text(
+                                        controller.posts[index]['posts_tagline'],
+                                        style: TextStyle(
+                                          color: Colors.black54,
+                                          fontSize: 10.sp,
+                                        ),
+                                      ),
+                                      Text(
+                                        controller.posts[index]['posts_addtags'],
+                                        style: TextStyle(
+                                          color: Colors.black87,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 10.sp,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 1.h,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.bookmark_border_sharp,
+                                            color: AppColor.ink,
+                                          ),
+                                          SizedBox(width: 3.w,),
+                                          Icon(
+                                            Icons.favorite_border,
+                                            color: AppColor.ink,
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            height: 2.h,
+                          );
+                        },
+                        itemCount: controller.posts.length,
+                      ),
                     ),
                   ),
                 ],

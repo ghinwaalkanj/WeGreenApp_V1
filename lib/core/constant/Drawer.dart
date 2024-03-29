@@ -28,7 +28,7 @@ class NotificationDrawer extends StatelessWidget {
               ListTile(
                 leading: Transform.scale(
                   scale: 1.5,
-                  origin: Offset(-95.w,0),
+                  origin: Offset(-95.w, 0),
                   child: Image.asset(AppImages.notification),
                 ),
               ),
@@ -45,7 +45,49 @@ class NotificationDrawer extends StatelessWidget {
               SizedBox(
                 height: 2.h,
               ),
-
+              Container(
+                height: 7.h,
+                width: 35.w,
+                alignment: Alignment.center,
+                margin: EdgeInsets.symmetric(horizontal: 5.w),
+                padding: EdgeInsets.symmetric(horizontal: 2.w),
+                decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.circular(10.sp)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('See the new WeGreen\nBusiness near you.'),
+                    Icon(
+                      Icons.location_on_outlined,
+                      color: AppColor.ink,
+                      size: 25.sp,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 2.h,),
+              Container(
+                height: 7.h,
+                width: 35.w,
+                alignment: Alignment.center,
+                margin: EdgeInsets.symmetric(horizontal: 5.w),
+                padding: EdgeInsets.symmetric(horizontal: 2.w),
+                decoration: BoxDecoration(
+                    color: Colors.black12,
+                    borderRadius: BorderRadius.circular(10.sp)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('ZeroWaste Community\nchanged conference date.'),
+                    Icon(
+                      Icons.access_time,
+                      color: AppColor.ink,
+                      size: 25.sp,
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
