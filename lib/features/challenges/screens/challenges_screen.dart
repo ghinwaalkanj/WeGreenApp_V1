@@ -9,6 +9,7 @@ import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
+import 'package:we_green_v1/features/challenges/screens/widget/add_goals.dart';
 import 'package:we_green_v1/features/challenges/screens/widget/challenge_type.dart';
 import 'package:we_green_v1/features/challenges/screens/widget/procedures_types.dart';
 import '../../../core/class/statusrequest.dart';
@@ -140,194 +141,182 @@ class ChallengesScreen extends StatelessWidget {
                                 offset: Offset(2, 2),
                                 blurRadius: 5)
                           ]),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Select waste category',
-                            style: TextStyle(
-                              color: AppColor.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 2.h,
-                          ),
-                          Container(
-                            height: 4.h,
-                            padding: EdgeInsets.only(left: 2.w),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.grey),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: Obx(() => DropdownButton<String>(
-                                  value: controller.dropdownValue.value,
-                                  icon: Icon(Icons.keyboard_arrow_down_rounded),
-                                  underline: Container(),
-                                  onChanged: (String? newValue) {
-                                    controller.changeDropdownValue(newValue!);
-                                  },
-                                  items: <String>[
-                                    'Paper',
-                                    'Plastic',
-                                    'Glass',
-                                    'Food',
-                                    'Metal',
-                                    'Special',
-                                    'E-Waste',
-                                    'Drugs',
-                                    'Non-Recyclable'
-                                  ].map<DropdownMenuItem<String>>(
-                                    (String value) {
-                                      return DropdownMenuItem<String>(
-                                        value: value,
-                                        child: Text(
-                                          value,
-                                          style: TextStyle(
-                                            color: AppColor.ink,
-                                            fontSize: 11.sp,
+                      child: controller.cat == 1
+                          ? AddGoal()
+                          : Column(
+                              children: [
+                                Container(
+                                  height: 6.h,
+                                  padding: EdgeInsets.only(top: 1.h),
+                                  child: TextField(
+                                    decoration: InputDecoration(
+                                      contentPadding: EdgeInsets.symmetric(
+                                        vertical: 1.h,
+                                        horizontal: 15.0,
+                                      ),
+                                      hintText: 'Search reward',
+                                      suffixIcon: Icon(Icons.search),
+                                      border: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(11.sp),
+                                        borderSide: BorderSide(
+                                          color: Colors.grey,
+                                          width: 1.0,
+                                        ),
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(11.sp),
+                                        borderSide: BorderSide(
+                                          color: Colors.grey,
+                                          width: 1.0,
+                                        ),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(11.sp),
+                                        borderSide: BorderSide(
+                                          color: Colors.blue,
+                                          width: 1.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  padding: EdgeInsets.only(top: 3.h),
+                                  height: 14.h,
+                                  child: ListView.separated(
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {},
+                                        child: Container(
+                                          height: 9.h,
+                                          width: 10.h,
+                                          margin: EdgeInsets.only(bottom: 2.h),
+                                          decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(10.sp),
+                                              boxShadow: const [
+                                                BoxShadow(
+                                                    color: Colors.black26,
+                                                    offset: Offset(2, 2),
+                                                    blurRadius: 5)
+                                              ]),
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                height: 5.h,
+                                                child: Image.asset(
+                                                    AppImages.recycle),
+                                              ),
+                                              SizedBox(
+                                                height: 0.5.h,
+                                              ),
+                                              Text(
+                                                'recycle',
+                                                style: TextStyle(
+                                                  color: AppColor.ink,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 11.sp,
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
                                       );
                                     },
-                                  ).toList(),
-                                )),
-                          ),
-                          SizedBox(
-                            height: 2.h,
-                          ),
-                          Text(
-                            'Select procedure type',
-                            style: TextStyle(
-                              color: AppColor.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 1.h,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ProceduresTypes(
-                                text: 'Recycle',
-                                image: Image.asset(AppImages.recycle),
-                                onPressed: () {
-                                  controller.updateproc(1);
-                                },
-                                color: controller.proc == 1
-                                    ? AppColor.green.withOpacity(0.50)
-                                    : Colors.white,
-                              ),
-                              ProceduresTypes(
-                                text: 'Reuse',
-                                image: Image.asset(AppImages.reuse),
-                                onPressed: () {
-                                  controller.updateproc(2);
-                                },
-                                color: controller.proc == 2
-                                    ? AppColor.green.withOpacity(0.50)
-                                    : Colors.white,
-                              ),
-                              ProceduresTypes(
-                                text: 'Reduce',
-                                image: Image.asset(AppImages.reduce),
-                                onPressed: () {
-                                  controller.updateproc(3);
-                                },
-                                color: controller.proc == 3
-                                    ? AppColor.green.withOpacity(0.50)
-                                    : Colors.white,
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 2.h,
-                          ),
-                          Text(
-                            'Enter goal amount',
-                            style: TextStyle(
-                              color: AppColor.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Container(
-                                width: 20.w,
-                                child: TextField(
-                                  decoration: InputDecoration(
-                                    hintText: 'Enter amount',
-                                    border: UnderlineInputBorder(),
+                                    separatorBuilder:
+                                        (BuildContext context, int index) {
+                                      return SizedBox(
+                                        width: 3.w,
+                                      );
+                                    },
+                                    itemCount: 5,
                                   ),
                                 ),
-                              ),
-                              Text(
-                                controller.proc == 1
-                                    ? ' % recycling'
-                                    : controller.proc == 2
-                                        ? '% reusing'
-                                        : '% reducing',
-                                style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12.sp,
+                                Container(
+                                  padding: EdgeInsets.only(top: 1.h),
+                                  height: 34.h,
+                                  child: ListView.separated(
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {},
+                                        child: Container(
+                                          height: 9.h,
+                                          width: 10.h,
+                                          margin: EdgeInsets.symmetric(
+                                              horizontal: 1.w),
+                                          decoration: BoxDecoration(
+                                              color: Color(0xffD9F9A5),
+                                              borderRadius:
+                                                  BorderRadius.circular(10.sp),
+                                              boxShadow: const [
+                                                BoxShadow(
+                                                  color: Colors.black26,
+                                                  offset: Offset(2, 2),
+                                                  blurRadius: 5,
+                                                )
+                                              ]),
+                                          child: Row(
+                                            children: [
+                                              Container(
+                                                padding: EdgeInsets.only(left: 3.w),
+                                                height: 7.h,
+                                                child: Image.asset(
+                                                    AppImages.discount),
+                                              ),
+                                              SizedBox(
+                                                width: 1.w,
+                                              ),
+                                              VerticalDivider(
+                                                color: AppColor.green,
+                                                width: 0.6.w,
+                                              ),
+                                              SizedBox(
+                                                width: 2.w,
+                                              ),
+                                              Column(
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    '25% Discount',
+                                                    style: TextStyle(
+                                                      color: AppColor.ink,
+                                                      fontWeight: FontWeight.bold,
+                                                      fontSize: 12.sp,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    'in Elsa 2nd Hand Store',
+                                                    style: TextStyle(
+                                                      color: Colors.black54,
+                                                      fontSize: 10.sp,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                    separatorBuilder:
+                                        (BuildContext context, int index) {
+                                      return SizedBox(
+                                        height: 2.h,
+                                      );
+                                    },
+                                    itemCount: 5,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 2.h,
-                          ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Deadline',
-                            style: TextStyle(
-                              color: Colors.black87,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 13.sp,
+                              ],
                             ),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              controller.pickDate();
-                            },
-                            child: Obx(() => Text(
-                              DateFormat('dd MMM yyyy').format(controller.selectedDate.value),
-                              style: TextStyle(color: AppColor.ink),
-                            )),
-                          ),
-                        ],
-                      ),
-                          SizedBox(height: 3.h,),
-                          Center(
-                            child: MaterialButton(
-                              height: 6.h,
-                              minWidth: 44.w,
-                              color: AppColor.green,
-                              onPressed: () {
-                                Get.to(NavigationMenu());
-                              },
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                BorderRadius.circular(30), // Set border radius
-                              ),
-                              child: Text(
-                                "add",
-                                style: TextStyle(
-                                    color: AppColor.white,
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                 ],

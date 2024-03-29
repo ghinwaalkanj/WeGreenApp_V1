@@ -26,6 +26,11 @@ class AppImages {
    static const String meet = "$rootImages/meet.png";
    static const String points = "$rootImages/points.png";
 
+
+   static const String free = "$rootImages/free.png";
+   static const String discount = "$rootImages/discount.png";
+
+
   // -- App Logos
   static const String appLogo = "$rootImages/vecteezy_eco-green-leaf-icon-bio-nature-green-eco-symbol-for-web-and_-removebg-preview 1.png";
   static const String textLogo = "$rootImages/WeGreen.png";
