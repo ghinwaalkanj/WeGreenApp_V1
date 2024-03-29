@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Positioned(
-          top: -49.5.h,
+          top: -54.h,
           child: Transform.scale(
             scale: 1.5,
             child: Image.asset(
