@@ -14,6 +14,7 @@ class AppImages {
    static const String cwaste = "$rootImages/cwaste.png";
    static const String gdata = "$rootImages/gdata.png";
    static const String challenges = "$rootImages/challenges.png";
+   static const String ltp = "$rootImages/ltp.png";
 
 
    static const String recycle = "$rootImages/recycle.png";
