@@ -130,7 +130,7 @@ class ChallengesScreen extends StatelessWidget {
                   Positioned(
                     top: 41.h,
                     child: Container(
-                        height: 120.w,
+                        height: 65.h,
                         width: 85.w,
                         padding: EdgeInsets.fromLTRB(5.w, 1.h, 5.w, 0),
                         decoration: BoxDecoration(
