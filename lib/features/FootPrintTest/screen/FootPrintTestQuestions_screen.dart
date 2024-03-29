@@ -11,6 +11,7 @@ import 'package:we_green_v1/features/FootPrintTest/screen/widget/fp_next_button.
 import 'package:we_green_v1/features/FootPrintTest/screen/widget/fp_previous_button.dart';
 import 'package:we_green_v1/features/FootPrintTest/screen/widget/info_box.dart';
 import 'package:we_green_v1/features/FootPrintTest/screen/widget/question_row.dart';
+import '../../../core/constant/color.dart';
 import '../../../core/constant/image_strings.dart';
 import '../controller/FootPrintTest_controller.dart';
 
@@ -75,8 +76,8 @@ class FootPrintTestQuestionsScreen extends StatelessWidget {
           FootPrintHeader(),
           QuestionRow(),
           FootPrintNavigation(),
-          FootPrintNextButton(),
-          FootPrintPreviousButton(),
+          FootPrintNextButton(color: AppColor.darkGreen, bottom: 15.h, onTap:()=>FootPrintController.instance.nextPage(),),
+          FootPrintPreviousButton(color: AppColor.darkGreen, bottom: 15.h,onTap: () => FootPrintController.instance.previousPage(),),
           InfoBox(),
         ],
       ),
