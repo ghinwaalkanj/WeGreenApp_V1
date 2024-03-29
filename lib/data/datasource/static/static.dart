@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:we_green_v1/features/Learn/screens/learn_screen.dart';
 import 'package:we_green_v1/features/profile/screens/profile_screen.dart';
 
 import '../../../core/constant/image_strings.dart';
+import '../../../features/Learn/controller/learn_controller.dart';
 import '../../../features/control_waste/screens/controle_waste_screen.dart';
 
 class DataLists {
@@ -31,7 +33,7 @@ class DataLists {
 
   static final List routs = [
     ControlWasteScreen(),
-    ProfileScreen(),
+    LearnScreen(),
     ProfileScreen(),
     ProfileScreen(),
   ];
