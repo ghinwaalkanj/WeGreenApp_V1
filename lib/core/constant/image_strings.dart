@@ -16,6 +16,11 @@ class AppImages {
    static const String challenges = "$rootImages/challenges.png";
 
 
+   static const String recycle = "$rootImages/recycle.png";
+   static const String reuse = "$rootImages/reuse.png";
+   static const String reduce = "$rootImages/reduce.png";
+
+
    static const String waste = "$rootImages/waste.png";
    static const String learn = "$rootImages/learn.png";
    static const String meet = "$rootImages/meet.png";

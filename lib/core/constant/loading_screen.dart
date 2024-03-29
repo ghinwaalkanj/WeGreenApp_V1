@@ -42,7 +42,7 @@ class LoadingScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 23.h,
+              bottom: 28.h,
               child: Text(
                 textAlign: TextAlign.center,
                 'Loading ...',

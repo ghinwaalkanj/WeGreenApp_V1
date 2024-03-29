@@ -31,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   const bg(),
                   CustomAppBar(
-                      image: AppImages.profile,
+                      image: Image.asset(AppImages.profile),
                       onPressed: () {
                         controller.scaffoldKey.currentState?.openDrawer();
                       },
