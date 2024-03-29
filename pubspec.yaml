@@ -22,6 +22,7 @@ dependencies:
   iconsax:
   table_calendar:
   intl:
+  google_maps_flutter:
 
 dev_dependencies:
   flutter_test:

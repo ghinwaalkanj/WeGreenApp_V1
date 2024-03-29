@@ -16,7 +16,10 @@ import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
 import '../../../core/constant/loading_screen.dart';
 import '../../../data/datasource/static/static.dart';
+import '../../../navigation_menu.dart';
 import '../../FootPrintTest/screen/FootPrintTest_screen.dart';
+import '../../add_waste/screens/add_waste_screens.dart';
+import '../../control_waste/screens/controle_waste_screen.dart';
 import '../controller/green_data_controller.dart';
 
 class GreenDataScreen extends StatelessWidget {
@@ -61,7 +64,7 @@ class GreenDataScreen extends StatelessWidget {
                     left: 5.w,
                     child: IconButton(
                       onPressed: () {
-                        Get.back();
+                        Get.off(NavigationMenu());
                       },
                       icon: Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,
@@ -73,7 +76,9 @@ class GreenDataScreen extends StatelessWidget {
                       children: [
                         CustomContainer2(
                           text: "Add Your\nWaste Data",
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(AddWasteScreen());
+                          },
                           image: Icon(
                             Icons.add_circle_outline,
                             color: AppColor.green,
