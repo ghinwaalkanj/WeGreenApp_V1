@@ -11,7 +11,7 @@ import '../../../data/datasource/remote/profile_data.dart';
 abstract class ProfileController extends GetxController {
 
 }
-
+///
 class ProfileControllerImp extends ProfileController {
   ProfileData profileData = ProfileData(Get.find());
   MyServices myServices = Get.find();

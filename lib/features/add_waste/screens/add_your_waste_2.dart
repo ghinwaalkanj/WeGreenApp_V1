@@ -112,7 +112,7 @@ class AddYourWaste2 extends StatelessWidget {
     );
   }
 }
-
+///
 class ProcedureContainer extends StatelessWidget {
   const ProcedureContainer({
     super.key,  this.image, required this.text, this.percentage,

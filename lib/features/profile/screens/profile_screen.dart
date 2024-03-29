@@ -117,6 +117,9 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                         ProfileTitle(title: "Goals"),
+                        SizedBox(
+                          height: 1.5.h,
+                        ),
                         Padding(
                           padding: EdgeInsets.only(left: 3.w),
                           child: Column(
@@ -204,7 +207,6 @@ class ProfileScreen extends StatelessWidget {
                             fontSize: 20.sp,
                           ),
                         ),
-
                       ],
                     ),
                   ),
