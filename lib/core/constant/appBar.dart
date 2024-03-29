@@ -7,17 +7,17 @@ import 'color.dart';
 import 'image_strings.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final Widget image;
+  final Widget? image;
   final VoidCallback onPressed;
   final VoidCallback onTap;
 
   const CustomAppBar({
     super.key,
-    required this.image,
+     this.image,
     required this.onPressed,
-    required this.onTap,
+    required this.onTap, this.scale=1.3,
   });
-
+final double scale;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -57,9 +57,8 @@ class CustomAppBar extends StatelessWidget {
         Positioned(
           top: 13.2.h,
           child: Transform.scale(
-            scale: 1.3,
-            child:image
-          ),
+            scale: scale,
+            child: image != null ? image : SizedBox(),          ),
         ),
       ],
     );

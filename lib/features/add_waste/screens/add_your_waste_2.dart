@@ -112,21 +112,26 @@ class AddYourWaste2 extends StatelessWidget {
     );
   }
 }
-
+///
 class ProcedureContainer extends StatelessWidget {
   const ProcedureContainer({
-    super.key, required this.image, required this.text,
+    super.key,  this.image, required this.text, this.percentage,
   });
-  final String image;
+  final String? image;
   final String text;
+  final String? percentage;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 8.h,
+      height: 8.2.h,
       width: 20.w,
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.circular(15),
+        border: Border.all(
+          color: AppColor.green.withOpacity(0.5), // Change the color here
+          width: 1.5, // Adjust the width as needed
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.3),
@@ -140,8 +145,21 @@ class ProcedureContainer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image:AssetImage( image),),
-            Text(text,style: TextStyle(color: AppColor.ink,fontWeight: FontWeight.w600),)
+            if(image!=null)  Image(image:AssetImage(image!),),
+            if(image==null)  Padding(
+              padding:  EdgeInsets.symmetric(horizontal:1.w),
+              child: FittedBox(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Icon(Icons.arrow_upward,color: AppColor.ink,),
+                    if(percentage!=null)Text("$percentage%",style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w600,color: AppColor.grey),)
+                  ],
+                ),
+              ),
+            ),
+            Text(text,style: TextStyle(color: AppColor.ink,fontWeight: FontWeight.w600,fontSize: 10.sp),)
           ],
         ),
       ),
