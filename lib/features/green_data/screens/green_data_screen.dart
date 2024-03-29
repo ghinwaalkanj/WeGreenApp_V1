@@ -38,7 +38,7 @@ class GreenDataScreen extends StatelessWidget {
                 children: [
                   bg(),
                   CustomAppBar(
-                      image: AppImages.gdata,
+                      image: Image.asset(AppImages.gdata,),
                       onPressed: () {
                         controller.scaffoldKey.currentState?.openDrawer();
                       },

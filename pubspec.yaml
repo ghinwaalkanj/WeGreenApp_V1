@@ -21,6 +21,7 @@ dependencies:
   smooth_page_indicator:
   iconsax:
   table_calendar:
+  intl:
 
 dev_dependencies:
   flutter_test:

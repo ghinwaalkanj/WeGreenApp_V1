@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   bg(),
                   CustomAppBar(
-                      image: AppImages.logo,
+                      image: Image.asset(AppImages.logo),
                       onPressed: () {
                         controller.scaffoldKey.currentState?.openDrawer();
                       },

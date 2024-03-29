@@ -14,6 +14,7 @@ import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
 import '../../../core/constant/loading_screen.dart';
+import '../../challenges/screens/challenges_screen.dart';
 import '../../green_data/screens/green_data_screen.dart';
 import '../controller/control_waste_controller.dart';
 
@@ -36,7 +37,7 @@ class ControlWasteScreen extends StatelessWidget {
                 children: [
                   bg(),
                   CustomAppBar(
-                      image: AppImages.cwaste,
+                      image: Image.asset(AppImages.cwaste),
                       onPressed: () {
                         controller.scaffoldKey.currentState?.openDrawer();
                       },
@@ -79,7 +80,9 @@ class ControlWasteScreen extends StatelessWidget {
                     top: 45.h,
                     child: CustomContainer(
                       text: "Challenges",
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(ChallengesScreen());
+                      },
                       image: AppImages.challenges,
                     ),
                   ),

@@ -7,7 +7,7 @@ import 'color.dart';
 import 'image_strings.dart';
 
 class CustomAppBar extends StatelessWidget {
-  final String image;
+  final Widget image;
   final VoidCallback onPressed;
   final VoidCallback onTap;
 
@@ -58,9 +58,7 @@ class CustomAppBar extends StatelessWidget {
           top: 12.h,
           child: Transform.scale(
             scale: 1.3,
-            child: Image.asset(
-              image,
-            ),
+            child:image
           ),
         ),
       ],
