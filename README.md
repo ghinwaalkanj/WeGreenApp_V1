@@ -1,6 +1,9 @@
 # WeGreen
 
-![WeGreen Logo](https://github.com/ghinw/WeGreenApp_V1/assets/116727137/f3da3bd3-5a96-4e10-82f5-9ece2233d601)
+<div align="center">
+  <img src="https://github.com/ghinw/WeGreenApp_V1/assets/116727137/f3da3bd3-5a96-4e10-82f5-9ece2233d601" alt="WeGreen Logo" width="100">
+</div>
+
 WeGreen is a mobile application aimed at combating food waste and promoting sustainability. Our mission is to empower individuals and organizations to take action towards reducing food waste and its environmental impact.
 
 ## 🎥 Promo Video
