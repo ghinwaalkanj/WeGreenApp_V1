@@ -17,7 +17,7 @@ class MeetData {
       String usersid,
       String title,
       String tagline,
-      String addtags,
+      String date,
       String content,
       {File? file}
       ) async {
@@ -25,21 +25,21 @@ class MeetData {
       "usersid": usersid,
       "title": title,
       "tagline": tagline,
-      "addtags": addtags,
+      "date": date,
       "content": content,
     };
 
     var response;
     if (file != null) {
       response = await crud.postFileAndData(
-        AppLink.addPost,
+        AppLink.addMeet,
         postData,
         {},
         file,
       );
     } else {
       response = await crud.postData(
-        AppLink.addPost,
+        AppLink.addMeet,
         postData,
         {},
       );

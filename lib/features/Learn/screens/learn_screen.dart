@@ -246,7 +246,7 @@ class LearnScreen extends StatelessWidget {
                     child: Container(
                       width: 85.w,
                       padding: EdgeInsets.only(top: 1.h),
-                      height: 50.h,
+                      height: 55.h,
                       child: ListView.separated(
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
