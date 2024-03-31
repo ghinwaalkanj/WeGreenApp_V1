@@ -11,4 +11,17 @@ class PointsData {
     var response = await crud.getData(AppLink.catigory, {});
     return response.fold((l) => l, (r) => r);
   }
+
+  points(
+      String categoryid,
+      ) async {
+    var response = await crud.postData(
+      AppLink.points,
+      {
+        "categoryid": categoryid,
+      },
+      {},
+    );
+    return response.fold((l) => l, (r) => r);
+  }
 }

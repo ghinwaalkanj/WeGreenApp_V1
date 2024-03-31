@@ -24,4 +24,5 @@ class AppLink {
   static const String addMeet = "$server/meet/add.php";
 
   static const String catigory = "$server/catigories/view.php";
+  static const String points = "$server/points/view.php";
 }

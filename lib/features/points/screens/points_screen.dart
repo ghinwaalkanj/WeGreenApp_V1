@@ -8,7 +8,6 @@ import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
-import 'package:we_green_v1/features/points/screens/points_details_screen.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
@@ -16,7 +15,6 @@ import '../../../core/constant/loading_screen.dart';
 import '../../../navigation_menu.dart';
 import '../controllers/points_controller.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
 
 class PointsScreen extends StatelessWidget {
   const PointsScreen({super.key});
@@ -26,8 +24,8 @@ class PointsScreen extends StatelessWidget {
     Get.put(PointsControllerImp());
 
     return GetBuilder<PointsControllerImp>(
-      builder: (controller) => controller.statusRequest == StatusRequest.loading
-          ? LoadingScreen()
+      builder: (controller) => controller.statusRequest == StatusRequest.loading ||controller.controllerCompleter==null ||controller.initialCameraPosition==null
+          ? const LoadingScreen()
           : Scaffold(
               key: controller.scaffoldKey,
               drawer: const MyDrawer(),
@@ -50,19 +48,25 @@ class PointsScreen extends StatelessWidget {
                       }),
                   Positioned(
                     top: 26.h,
-                    child: GestureDetector(
-                      onTap: (){
-                        Get.to(PointsDetailsScreen());
-                      },
-                      child: Text(
-                        'WeGreen Points',
-                        style: TextStyle(
-                          color: AppColor.green,
-                          fontFamily: 'DMSans',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 17.sp,
-                        ),
+                    child: Text(
+                      'WeGreen Points',
+                      style: TextStyle(
+                        color: AppColor.green,
+                        fontFamily: 'DMSans',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17.sp,
                       ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 25.h,
+                    left: 5.w,
+                    child: IconButton(
+                      onPressed: () {
+                        Get.offAll(const NavigationMenu());
+                      },
+                      icon: Icon(Icons.arrow_back_outlined),
+                      color: Colors.black54,
                     ),
                   ),
                   Positioned(
@@ -164,25 +168,31 @@ class PointsScreen extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              controller.updatecat(index);
+                            },
                             child: Container(
                               height: 9.h,
                               width: 10.h,
                               margin: EdgeInsets.only(bottom: 2.h),
                               decoration: BoxDecoration(
-                                  color: Colors.white,
+                                  color: controller.cat == index
+                                      ? AppColor.green.withOpacity(0.40)
+                                      : Colors.white,
                                   borderRadius: BorderRadius.circular(10.sp),
                                   boxShadow: const [
                                     BoxShadow(
-                                        color: Colors.black26,
-                                        offset: Offset(2, 2),
-                                        blurRadius: 5)
+                                      color: Colors.black26,
+                                      offset: Offset(2, 2),
+                                      blurRadius: 4,
+                                    )
                                   ]),
                               child: Column(
                                 children: [
                                   Container(
                                     height: 5.h,
-                                    child: Image.network('https://wegreen.000webhostapp.com/upload/posts/${controller.catigory[index]['categories_image']}'),
+                                    child: Image.network(
+                                        'https://wegreen.000webhostapp.com/upload/posts/${controller.catigory[index]['categories_image']}'),
                                   ),
                                   SizedBox(
                                     height: 0.5.h,
@@ -222,26 +232,11 @@ class PointsScreen extends StatelessWidget {
                       child: GoogleMap(
                         zoomControlsEnabled: false,
                         mapType: MapType.terrain,
-                        initialCameraPosition: CameraPosition(
-                          target:LatLng(33.510414, 36.278336),
-                          zoom: 15.4746,
-                        ),
-                        onMapCreated: (GoogleMapController controllermap) {
-                          controller.controllerCompleter!
-                              .complete(controllermap);
+                        initialCameraPosition: controller.initialCameraPosition!,
+                        onMapCreated: (GoogleMapController controllermap) async {
+                          controller.controllerCompleter!.complete(controllermap);
                         },
-                        markers:{
-                      Marker(
-                      markerId: MarkerId('your_marker_id'), // Replace 'your_marker_id' with a unique identifier
-                      position: LatLng(33.511431, 36.277511),
-                      // Other properties like icon, infoWindow, etc. can be added here
-                      ),
-                          Marker(
-                            markerId: MarkerId('your_marker_id'), // Replace 'your_marker_id' with a unique identifier
-                            position: LatLng(33.508942, 36.274133),
-                            // Other properties like icon, infoWindow, etc. can be added here
-                          ),
-                        },
+                        markers: controller.markers.toSet(),
                       ),
                     ),
                   ),

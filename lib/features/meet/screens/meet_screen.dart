@@ -67,7 +67,7 @@ class MeetScreen extends StatelessWidget {
                       onPressed: () {
                         Get.offAll(const NavigationMenu());
                       },
-                      icon: Icon(Icons.arrow_back_outlined),
+                      icon: const Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,
                     ),
                   ),
