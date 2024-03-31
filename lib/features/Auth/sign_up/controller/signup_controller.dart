@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:we_green_v1/features/Auth/sign_in/screens/sign_in_screen.dart';
-import 'package:we_green_v1/navigation_menu.dart';
-
 import '../../../../core/class/statusrequest.dart';
 import '../../../../core/services/handingdatacontroller.dart';
 import '../../../../core/services/services.dart';
-import '../../../../data/datasource/remote/signin_data.dart';
 import '../../../../data/datasource/remote/signup_data.dart';
 import '../../address_details/screens/address_details_screen.dart';
 
@@ -24,6 +20,12 @@ class signUpControllerImp extends signUpController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   GlobalKey<FormState> form = GlobalKey<FormState>();
+  RxBool visibile = true.obs;
+
+  void updatevisibility(){
+    visibile.value=!visibile.value;
+    update();
+  }
 
   @override
   signUp(BuildContext context) async {
@@ -41,6 +43,12 @@ class signUpControllerImp extends signUpController {
         if (response['status'] == true) {
           statusRequest = StatusRequest.success;
           update();
+          myServices.sharedPreferences
+              .setString("token", response['data']['users_password']);
+          myServices.sharedPreferences
+              .setInt("users_id", response['data']['users_id']);
+          myServices.sharedPreferences
+              .setString("users_name", response['data']['users_name']);
           BuildContext context = Get.context!;
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -49,14 +57,14 @@ class signUpControllerImp extends signUpController {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "تم انشاء الحساب بنجاح ",
+                    "Your account has been successfully created",
                     textAlign: TextAlign.right,
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontSize: 9.sp,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'ElMessiri',
+                      fontFamily: 'DMSans',
                     ),
                   ),
                 ],
@@ -76,14 +84,14 @@ class signUpControllerImp extends signUpController {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    " لقد حدث خطأ أعد المحاولة لاحقا ",
+                   "An error occurred, please try again later",
                     textAlign: TextAlign.right,
                     textDirection: TextDirection.rtl,
                     style: TextStyle(
                       fontSize: 9.sp,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontFamily: 'ElMessiri',
+                      fontFamily: 'DMSans',
                     ),
                   ),
                 ],

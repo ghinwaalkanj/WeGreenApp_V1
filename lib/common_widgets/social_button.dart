@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
 
@@ -26,8 +27,8 @@ class SocialButton extends StatelessWidget {
             image: AssetImage(AppImages.twitter),
           ),
         ),
-        const SizedBox(
-          width: TSizes.spaceBtwItems,
+         SizedBox(
+          width: 2.w,
         ),
         IconButton(
           onPressed: () {},
@@ -37,8 +38,8 @@ class SocialButton extends StatelessWidget {
             image: AssetImage(AppImages.google),
           ),
         ),
-        const SizedBox(
-          width: TSizes.spaceBtwItems,
+        SizedBox(
+          width: 2.w,
         ),
         IconButton(
           onPressed: () {},

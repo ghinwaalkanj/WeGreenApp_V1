@@ -17,7 +17,7 @@ class bg extends StatelessWidget {
           gradient: LinearGradient(
             colors: [
               AppColor.white,
-              AppColor.darkBeige,
+              AppColor.darkBeige.withOpacity(0.65),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,

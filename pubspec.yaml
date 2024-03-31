@@ -16,6 +16,8 @@ dependencies:
   get:
   sizer:
   dartz:
+  lottie:
+  image_picker:
   http:
   shared_preferences:
   smooth_page_indicator:

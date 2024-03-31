@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../core/constant/color.dart';
+import '../features/Auth/sign_in/controller/signin_controller.dart';
+import '../features/Auth/sign_up/controller/signup_controller.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -15,17 +19,43 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final String labelText;
   final IconData? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? suffixIcon;
   final bool isSuffixIconActive;
 
   @override
   Widget build(BuildContext context) {
+    final signincontroller = Get.put(SignInControllerImp());
+    final signupcontroller = Get.put(signUpControllerImp());
+
     return SizedBox(
-      height: MediaQuery.of(context).size.height / 14,
+      height: MediaQuery
+          .of(context)
+          .size
+          .height / 14,
       child: TextFormField(
+        style: TextStyle(
+          fontFamily: 'DMSans',
+          color: AppColor.black,
+          fontSize: 12.sp,
+        ),
+        obscureText:isSuffixIconActive?signincontroller.visibile.value||signupcontroller.visibile.value:false,
         controller: controller,
+        keyboardType: isSuffixIconActive?TextInputType.visiblePassword:TextInputType.name,
         decoration: InputDecoration(
-          border: OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.black38,
+              width: 0.3.w,
+            ),
+            borderRadius: BorderRadius.all(
+              Radius.circular(15),
+            ),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: AppColor.green,
+              width: 0.3.w,
+            ),
             borderRadius: BorderRadius.all(
               Radius.circular(15),
             ),
@@ -37,7 +67,13 @@ class CustomTextField extends StatelessWidget {
             color: AppColor.green,
           ),
           labelText: labelText,
-          suffixIcon: isSuffixIconActive ? Icon(suffixIcon) : null,
+          labelStyle: TextStyle(
+              fontFamily: 'DMSans', fontSize: 11.sp, color: Colors.black54),
+          suffixIcon: isSuffixIconActive ? IconButton(
+            onPressed: () {
+              signincontroller.updatevisibility();
+              signupcontroller.updatevisibility();
+            }, icon: suffixIcon!,) : null,
         ),
       ),
     );

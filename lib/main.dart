@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:we_green_v1/features/onboarding/screen/onboarding_screen.dart';
 import 'package:we_green_v1/features/Splash/splash_screen.dart';
 import 'bindings/intialbindings.dart';
 import 'core/services/services.dart';
@@ -13,7 +12,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

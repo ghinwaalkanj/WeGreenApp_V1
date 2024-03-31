@@ -20,63 +20,65 @@ class OnBoardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.06,
-        ),
-        const Image(
-          image: AssetImage(AppImages.appLogo),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.03,
-        ),
-        const Image(
-          image: AssetImage(AppImages.textLogo),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.08,
-        ),
-        Stack(
-          children: [
-            Image(
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.38,
-              image: AssetImage(bg),
-            ),
-            Image(
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.38,
-              image: AssetImage(image),
-            ),
-          ],
-        ),
-        Text(
-          title,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 22.sp,
-            color: AppColor.ink,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height:7.h,
           ),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(
-          height: TSizes.spaceBtwItems / 2,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width / 8),
-          child: Text(
-            subtitle,
+           Image(
+            image: AssetImage(AppImages.splash),
+            height: 17.h,
+          ),
+          SizedBox(
+            height:5.h,
+          ),
+          Stack(
+            children: [
+              Image(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.38,
+                image: AssetImage(bg),
+              ),
+              Image(
+                width: MediaQuery.of(context).size.width * 0.8,
+                height: MediaQuery.of(context).size.height * 0.38,
+                image: AssetImage(image),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 1.h,
+          ),
+          Text(
+            title,
             style: TextStyle(
-              fontSize: 12.sp,
-              color: Colors.black54,
+              fontWeight: FontWeight.w600,
+              fontSize: 19.sp,
+              fontFamily: 'DMSans',
+              color: AppColor.ink,
             ),
             textAlign: TextAlign.center,
-            //
           ),
-        )
-      ],
+           SizedBox(
+            height: 3.h,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: 10.w),
+            child: Text(
+              subtitle,
+              style: TextStyle(
+                fontSize: 12.sp,
+                fontFamily: 'DMSans',
+                color: Colors.black54,
+              ),
+              textAlign: TextAlign.center,
+              //
+            ),
+          )
+        ],
+      ),
     );
   }
 }

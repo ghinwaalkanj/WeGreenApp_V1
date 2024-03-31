@@ -87,7 +87,18 @@ class PointsDetailsScreen extends StatelessWidget {
                           controller.controllerCompleter!
                               .complete(controllermap);
                         },
-                        markers: controller.markers.toSet(),
+                        markers: {
+                          Marker(
+                            markerId: MarkerId('your_marker_id'), // Replace 'your_marker_id' with a unique identifier
+                            position: LatLng(33.511431, 36.277511),
+                            // Other properties like icon, infoWindow, etc. can be added here
+                          ),
+                          Marker(
+                            markerId: MarkerId('your_marker_id'), // Replace 'your_marker_id' with a unique identifier
+                            position: LatLng(33.508942, 36.274133),
+                            // Other properties like icon, infoWindow, etc. can be added here
+                          ),
+                        },
                       ),
                     ),
                   ),

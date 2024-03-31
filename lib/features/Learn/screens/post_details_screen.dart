@@ -8,11 +8,15 @@ import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
+import 'package:we_green_v1/features/Learn/screens/learn_screen.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
 
 class PostDetailsScreen extends StatelessWidget {
-  const PostDetailsScreen({super.key});
+  final List posts;
+  final int index;
+
+  const PostDetailsScreen({required this.posts, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +47,7 @@ class PostDetailsScreen extends StatelessWidget {
             child: Text(
               'Post Detail',
               style: TextStyle(
+                fontFamily: 'DMSans',
                 color: AppColor.green,
                 fontWeight: FontWeight.bold,
                 fontSize: 17.sp,
@@ -54,7 +59,7 @@ class PostDetailsScreen extends StatelessWidget {
             left: 5.w,
             child: IconButton(
               onPressed: () {
-                Get.back();
+                Get.offAll(const LearnScreen());
               },
               icon: Icon(Icons.arrow_back_outlined),
               color: Colors.black54,
@@ -80,40 +85,52 @@ class PostDetailsScreen extends StatelessWidget {
                 children: [
                   Positioned(
                     top: 0.h,
-                    child: Container(
-                      height: 20.h,
-                      width: 55.w,
-                      child: Image.asset(
-                        'assets/images/img2.png',
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 21.h,
                     child: Column(
                       children: [
-                        Text(
-                          'SORT IT OUT MATERIALS',
-                          style: TextStyle(
-                            color: AppColor.green,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13.sp,
+                        posts[index]['posts_image']=='empty'?SizedBox():Container(
+                          height: 20.h,
+                          width: 55.w,
+                          child: Image.network(
+                            'https://wegreen.000webhostapp.com/upload/posts/${posts[index]['posts_image']}',
+                            fit: BoxFit.fill,
                           ),
                         ),
                         Text(
-                          'A Guide For Sorting Your Waste',
+                          '${posts[index]['posts_title']}',
                           style: TextStyle(
+                            fontFamily: 'DMSans',
+                            color: AppColor.green,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 12.sp,
+                          ),
+                        ),
+                        Text(
+                          '${posts[index]['posts_tagline']}',
+                          style: TextStyle(
+                            fontFamily: 'DMSans',
                             color: Colors.black87,
                             fontWeight: FontWeight.bold,
                             fontSize: 12.sp,
                           ),
                         ),
                         Text(
-                          'by WeGreen',
+                          '${posts[index]['posts_addtags']}',
                           style: TextStyle(
+                            fontFamily: 'DMSans',
                             color: Colors.black54,
                             fontSize: 11.sp,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 75.w,
+                          height: 40.h,
+                          child: Text(
+                            '${posts[index]['posts_content']}',
+                            style: TextStyle(
+                              fontFamily: 'DMSans',
+                              color: Colors.black87,
+                              fontSize: 10.sp,
+                            ),
                           ),
                         ),
                       ],
@@ -126,36 +143,26 @@ class PostDetailsScreen extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.bookmark_border_sharp,
-                          color: Colors.black54,
+                          color: AppColor.ink,
                           size: 20.sp,
                         ),
-                        SizedBox(height: 1.h,),
+                        SizedBox(
+                          height: 1.5.h,
+                        ),
                         Icon(
                           Icons.favorite_border,
-                          color: Colors.black54,
+                          color: AppColor.ink,
                           size: 20.sp,
                         ),
-                        SizedBox(height: 1.h,),
+                        SizedBox(
+                          height: 1.5.h,
+                        ),
                         Icon(
                           Icons.share_outlined,
-                          color: Colors.black54,
+                          color: AppColor.ink,
                           size: 20.sp,
                         ),
                       ],
-                    ),
-                  ),
-                  Positioned(
-                    top: 32.h,
-                    child: Container(
-                      width: 75.w,
-                      height: 40.h,
-                      child: Text(
-                        'Waste   sorting   is   the  process  by   which waste    is       separated       into      different elements.      Waste       sorting     can  occur manually    at  the  household and collected throgh   curbside   collection   schemes,  orautomaticly      separated       in      materialsrecovery  facilities or mechanical  biologicaltreatment  systems.  hand sorting  was  the first method used  in  the  history  of waste sorting',
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontSize: 11.sp,
-                        ),
-                      ),
                     ),
                   ),
                 ],

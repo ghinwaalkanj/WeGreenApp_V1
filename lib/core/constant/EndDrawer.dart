@@ -42,6 +42,7 @@ class MyDrawer extends StatelessWidget {
                   '  MENU',
                   style: TextStyle(
                     color: AppColor.green,
+                    fontFamily: 'DMSans',
                     fontWeight: FontWeight.bold,
                     fontSize: 17.sp,
                   ),

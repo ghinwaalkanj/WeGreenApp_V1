@@ -61,6 +61,7 @@ class AppImages {
   // --footprint test
 
 // =============================== Lottie ========================== //
-  // static const String loading = "$rootLottie/loading2.json";
+   static const String loading = "$rootLottie/loading.json";
+   static const String dots = "$rootLottie/dots.json";
 
 }
