@@ -13,6 +13,7 @@ import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
 import '../../../core/constant/loading_screen.dart';
+import '../../../navigation_menu.dart';
 import '../controllers/points_controller.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -57,6 +58,7 @@ class PointsScreen extends StatelessWidget {
                         'WeGreen Points',
                         style: TextStyle(
                           color: AppColor.green,
+                          fontFamily: 'DMSans',
                           fontWeight: FontWeight.bold,
                           fontSize: 17.sp,
                         ),
@@ -64,21 +66,56 @@ class PointsScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 25.h,
-                    left: 5.w,
-                    child: IconButton(
-                      onPressed: () {
-                        Get.back();
-                      },
-                      icon: Icon(Icons.arrow_back_outlined),
-                      color: Colors.black54,
+                    top: 33.h,
+                    child: SizedBox(
+                      height: 4.5.h,
+                      width: 85.w,
+                      // padding: EdgeInsets.only(top: 1.h),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 0.h,
+                            horizontal: 15.0,
+                          ),
+                          hintText: 'Search WeGreen Places ...',
+                          hintStyle: TextStyle(
+                            fontFamily: 'DMSans',
+                            fontSize: 11.sp,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.search,
+                            size: 15.sp,
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(11.sp),
+                            borderSide: const BorderSide(
+                              color: Colors.grey,
+                              width: 1.0,
+                            ),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(11.sp),
+                            borderSide: const BorderSide(
+                              color: Colors.grey,
+                              width: 1.0,
+                            ),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(11.sp),
+                            borderSide: const BorderSide(
+                              color: AppColor.green,
+                              width: 1.0,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                   Positioned(
-                    top: 30.h,
+                    top: 36.h,
                     child: Container(
                       height: 6.h,
-                      width: 84.w,
+                      width: 83.w,
                       padding: EdgeInsets.only(top: 1.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,7 +126,7 @@ class PointsScreen extends StatelessWidget {
                                 'Filter',
                                 style: TextStyle(
                                   color: Colors.black54,
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'DMSans',
                                   fontSize: 11.sp,
                                 ),
                               ),
@@ -108,7 +145,7 @@ class PointsScreen extends StatelessWidget {
                             style: TextStyle(
                               decoration: TextDecoration.underline,
                               color: Colors.black54,
-                              fontFamily: 'Cairo',
+                              fontFamily: 'DMSans',
                               fontSize: 11.sp,
                             ),
                           ),
@@ -117,46 +154,7 @@ class PointsScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 35.h,
-                    child: Container(
-                      height: 6.h,
-                      width: 85.w,
-                      padding: EdgeInsets.only(top: 1.h),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 1.h,
-                            horizontal: 15.0,
-                          ),
-                          hintText: 'Search WeGreen places ...',
-                          suffixIcon: Icon(Icons.search),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(11.sp),
-                            borderSide: BorderSide(
-                              color: Colors.grey,
-                              width: 1.0,
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(11.sp),
-                            borderSide: BorderSide(
-                              color: Colors.grey,
-                              width: 1.0,
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(11.sp),
-                            borderSide: BorderSide(
-                              color: Colors.blue,
-                              width: 1.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 41.h,
+                    top: 40.h,
                     left: 7.w,
                     child: Container(
                       padding: EdgeInsets.only(top: 3.h),
@@ -193,8 +191,9 @@ class PointsScreen extends StatelessWidget {
                                     '${controller.catigory[index]['categories_title']}',
                                     style: TextStyle(
                                       color: AppColor.ink,
+                                      fontFamily: 'DMSans',
                                       fontWeight: FontWeight.w500,
-                                      fontSize: 11.sp,
+                                      fontSize: 9.sp,
                                     ),
                                   ),
                                 ],
@@ -212,10 +211,10 @@ class PointsScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 5.h,
+                    bottom: 3.h,
                     child: Container(
                       margin: EdgeInsets.fromLTRB(5.w, 0, 5.w, 0),
-                      height: 37.h,
+                      height: 42.h,
                       width: 85.w,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.sp),

@@ -14,6 +14,7 @@ import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
 import '../../../core/constant/loading_screen.dart';
+import '../../../navigation_menu.dart';
 import '../controller/meet_controller.dart';
 import 'create_meet_screen.dart';
 
@@ -64,7 +65,7 @@ class MeetScreen extends StatelessWidget {
                     left: 5.w,
                     child: IconButton(
                       onPressed: () {
-                        Get.back();
+                        Get.offAll(const NavigationMenu());
                       },
                       icon: Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,
@@ -75,7 +76,7 @@ class MeetScreen extends StatelessWidget {
                       right: 5.w,
                       child: GestureDetector(
                         onTap: () {
-                          Get.to(CreateMeetScreen());
+                          Get.offAll(const CreateMeetScreen());
                         },
                         child: Container(
                           padding: EdgeInsets.only(left: 3.w),
@@ -293,7 +294,7 @@ class MeetScreen extends StatelessWidget {
                                     ),
                                     Positioned(
                                       top: 34.h,
-                                      left: 15.w,
+                                      left: 10.w,
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,

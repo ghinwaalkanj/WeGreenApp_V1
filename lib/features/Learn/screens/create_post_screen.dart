@@ -151,7 +151,7 @@ class CreatePostScreen extends StatelessWidget {
                             ),
                             Positioned(
                               top: 10.h,
-                              child: Container(
+                              child: SizedBox(
                                 height: 5.h,
                                 width: 75.w,
                                 child: TextField(
@@ -171,7 +171,7 @@ class CreatePostScreen extends StatelessWidget {
                                     border: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.grey,
                                         width: 1.0,
                                       ),
@@ -179,7 +179,7 @@ class CreatePostScreen extends StatelessWidget {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.grey,
                                         width: 1.0,
                                       ),
@@ -187,8 +187,8 @@ class CreatePostScreen extends StatelessWidget {
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
-                                        color: Colors.blue,
+                                      borderSide: const BorderSide(
+                                        color: AppColor.green,
                                         width: 1.0,
                                       ),
                                     ),
@@ -198,7 +198,7 @@ class CreatePostScreen extends StatelessWidget {
                             ),
                             Positioned(
                               top: 16.h,
-                              child: Container(
+                              child: SizedBox(
                                 height: 5.h,
                                 width: 75.w,
                                 child: TextField(
@@ -218,7 +218,7 @@ class CreatePostScreen extends StatelessWidget {
                                     border: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.grey,
                                         width: 1.0,
                                       ),
@@ -226,7 +226,7 @@ class CreatePostScreen extends StatelessWidget {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.grey,
                                         width: 1.0,
                                       ),
@@ -234,8 +234,8 @@ class CreatePostScreen extends StatelessWidget {
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
-                                        color: Colors.blue,
+                                      borderSide: const BorderSide(
+                                        color: AppColor.green,
                                         width: 1.0,
                                       ),
                                     ),
@@ -266,7 +266,7 @@ class CreatePostScreen extends StatelessWidget {
                                     border: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.grey,
                                         width: 1.0,
                                       ),
@@ -274,7 +274,7 @@ class CreatePostScreen extends StatelessWidget {
                                     enabledBorder: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.grey,
                                         width: 1.0,
                                       ),
@@ -282,8 +282,8 @@ class CreatePostScreen extends StatelessWidget {
                                     focusedBorder: OutlineInputBorder(
                                       borderRadius:
                                           BorderRadius.circular(11.sp),
-                                      borderSide: BorderSide(
-                                        color: Colors.blue,
+                                      borderSide: const BorderSide(
+                                        color: AppColor.green,
                                         width: 1.0,
                                       ),
                                     ),

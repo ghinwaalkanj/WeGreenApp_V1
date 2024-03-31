@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
                             onTap: () {
-                              Get.to(DataLists.routs[index]);
+                              Get.offAll(DataLists.routs[index]);
                             },
                             child: Stack(
                               alignment: Alignment.center,
