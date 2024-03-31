@@ -16,7 +16,10 @@ class PostDetailsScreen extends StatelessWidget {
   final List posts;
   final int index;
 
-  const PostDetailsScreen({required this.posts, required this.index});
+  const PostDetailsScreen({
+    required this.posts,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -87,14 +90,16 @@ class PostDetailsScreen extends StatelessWidget {
                     top: 0.h,
                     child: Column(
                       children: [
-                        posts[index]['posts_image']=='empty'?SizedBox():Container(
-                          height: 20.h,
-                          width: 55.w,
-                          child: Image.network(
-                            'https://wegreen.000webhostapp.com/upload/posts/${posts[index]['posts_image']}',
-                            fit: BoxFit.fill,
-                          ),
-                        ),
+                        posts[index]['posts_image'] == 'empty'
+                            ? SizedBox()
+                            : Container(
+                                height: 20.h,
+                                width: 55.w,
+                                child: Image.network(
+                                  'https://wegreen.000webhostapp.com/upload/posts/${posts[index]['posts_image']}',
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
                         Text(
                           '${posts[index]['posts_title']}',
                           style: TextStyle(

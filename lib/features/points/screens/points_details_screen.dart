@@ -8,6 +8,7 @@ import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
+import 'package:we_green_v1/features/points/screens/points_screen.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
@@ -16,7 +17,13 @@ import '../controllers/points_controller.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class PointsDetailsScreen extends StatelessWidget {
-  const PointsDetailsScreen({super.key});
+  final List points;
+  final int index;
+
+  const PointsDetailsScreen({
+    required this.points,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +57,7 @@ class PointsDetailsScreen extends StatelessWidget {
                     child: Text(
                       'WeGreen Points',
                       style: TextStyle(
+                        fontFamily: 'DMSans',
                         color: AppColor.green,
                         fontWeight: FontWeight.bold,
                         fontSize: 17.sp,
@@ -61,7 +69,7 @@ class PointsDetailsScreen extends StatelessWidget {
                     left: 5.w,
                     child: IconButton(
                       onPressed: () {
-                        Get.back();
+                        Get.offAll(PointsScreen());
                       },
                       icon: Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,
@@ -79,26 +87,12 @@ class PointsDetailsScreen extends StatelessWidget {
                       child: GoogleMap(
                         zoomControlsEnabled: false,
                         mapType: MapType.terrain,
-                        initialCameraPosition: CameraPosition(
-                          target: LatLng(33.510414, 36.278336),
-                          zoom: 15.4746,
-                        ),
+                        initialCameraPosition: controller.initialCameraPosition!,
                         onMapCreated: (GoogleMapController controllermap) {
                           controller.controllerCompleter!
                               .complete(controllermap);
                         },
-                        markers: {
-                          Marker(
-                            markerId: MarkerId('your_marker_id'), // Replace 'your_marker_id' with a unique identifier
-                            position: LatLng(33.511431, 36.277511),
-                            // Other properties like icon, infoWindow, etc. can be added here
-                          ),
-                          Marker(
-                            markerId: MarkerId('your_marker_id'), // Replace 'your_marker_id' with a unique identifier
-                            position: LatLng(33.508942, 36.274133),
-                            // Other properties like icon, infoWindow, etc. can be added here
-                          ),
-                        },
+                        markers: controller.markers.toSet(),
                       ),
                     ),
                   ),
@@ -113,11 +107,13 @@ class PointsDetailsScreen extends StatelessWidget {
                           color: AppColor.green,
                           size: 22.sp,
                         ),
+                        SizedBox(width: 2.w,),
                         Text(
-                          'Every day open 08:00 - 23:00',
+                          '${points[index]['points_open']}',
                           style: TextStyle(
+                            fontFamily: 'DMSans',
                             color: Colors.black38,
-                            fontSize: 15.sp,
+                            fontSize: 10.sp,
                           ),
                         ),
                       ],
@@ -132,26 +128,28 @@ class PointsDetailsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Talle Caf',
+                            '${points[index]['points_name']}',
                             style: TextStyle(
+                              fontFamily: 'DMSans',
                               color: AppColor.ink,
                               fontWeight: FontWeight.bold,
                               fontSize: 15.sp,
                             ),
                           ),
                           Text(
-                            'cafe & restaurants',
+                            '${points[index]['points_kind']}',
                             style: TextStyle(
+                              fontFamily: 'DMSans',
                               color: Colors.black38,
-                              fontSize: 15.sp,
+                              fontSize: 11.sp,
                             ),
                           ),
                           SizedBox(
                             height: 2.h,
                           ),
                           Text(
-                            'Talle cafe is one of the very fastidious coffee shops about waste Talle cafe is one of the very fastidious coffee shops about waste ',
-                            style: TextStyle(
+                            '${points[index]['points_description']}',                            style: TextStyle(
+                              fontFamily: 'DMSans',
                               color: Colors.black54,
                               fontSize: 13.sp,
                             ),
@@ -161,7 +159,7 @@ class PointsDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 0.h,
+                    bottom: -2.h,
                     left: 7.w,
                     child: Container(
                       height: 15.h,
