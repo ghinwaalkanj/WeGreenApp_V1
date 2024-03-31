@@ -56,8 +56,9 @@ class TipsContainer extends StatelessWidget {
               child: Text(
                 text,
                 style: TextStyle(
+                  fontFamily: 'DMSans',
                   color: AppColor.black,
-                  fontSize: 9.sp,
+                  fontSize: 8.sp,
                 ),
               ),
             ),

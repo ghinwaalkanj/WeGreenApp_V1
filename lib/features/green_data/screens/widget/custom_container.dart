@@ -42,8 +42,9 @@ class CustomContainer2 extends StatelessWidget {
             Text(
               text,
               style: TextStyle(
+                fontFamily: 'DMSans',
                 fontWeight: FontWeight.w600,
-                fontSize: 12.sp,
+                fontSize: 10.sp,
                 color: AppColor.black,
               ),
               textAlign: TextAlign.center,

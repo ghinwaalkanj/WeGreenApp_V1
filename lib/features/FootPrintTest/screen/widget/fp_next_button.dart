@@ -26,8 +26,9 @@ class FootPrintNextButton extends StatelessWidget {
             child: Text(
               "next",
               style: TextStyle(
-                  fontSize: 12.sp,
+                  fontSize: 11.sp,
                   fontWeight: FontWeight.w600,
+                  fontFamily: 'DMSans',
                   color: color),
             ),
           ),

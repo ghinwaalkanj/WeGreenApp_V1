@@ -10,6 +10,7 @@ import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
 import 'package:we_green_v1/features/control_waste/screens/widget/custom_container.dart';
+import 'package:we_green_v1/navigation_menu.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
@@ -49,9 +50,10 @@ class ControlWasteScreen extends StatelessWidget {
                     child: Text(
                       'Control Your Waste',
                       style: TextStyle(
+                        fontFamily: 'DMSans',
                         color: AppColor.green,
                         fontWeight: FontWeight.bold,
-                        fontSize: 17.sp,
+                        fontSize: 15.sp,
                       ),
                     ),
                   ),
@@ -60,7 +62,7 @@ class ControlWasteScreen extends StatelessWidget {
                     left: 5.w,
                     child: IconButton(
                       onPressed: () {
-                        Get.back();
+                        Get.offAll(const NavigationMenu());
                       },
                       icon: Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,
@@ -71,7 +73,7 @@ class ControlWasteScreen extends StatelessWidget {
                     child: CustomContainer(
                       text: "Green Data",
                       onPressed: () {
-                        Get.to(GreenDataScreen());
+                        Get.offAll(const GreenDataScreen());
                       },
                       image: AppImages.gdata,
                     ),
@@ -81,7 +83,7 @@ class ControlWasteScreen extends StatelessWidget {
                     child: CustomContainer(
                       text: "Challenges",
                       onPressed: () {
-                        Get.to(ChallengesScreen());
+                        Get.offAll(const ChallengesScreen());
                       },
                       image: AppImages.challenges,
                     ),
@@ -89,7 +91,7 @@ class ControlWasteScreen extends StatelessWidget {
                   Positioned(
                     top: 60.h,
                     child: Container(
-                      height: 36.h,
+                      height: 38.h,
                       width: 90.w,
                       decoration: BoxDecoration(
                           color: Colors.white,
@@ -104,12 +106,13 @@ class ControlWasteScreen extends StatelessWidget {
                         firstDay: DateTime.utc(2010, 10, 16),
                         lastDay: DateTime.utc(2030, 3, 14),
                         focusedDay: DateTime.now(),
-                        rowHeight: 4.2.h,
+                        rowHeight: 4.4.h,
                         headerStyle: HeaderStyle(
                           formatButtonVisible: false,
                           titleTextStyle: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: 15.sp,
+                            fontFamily: 'DMSans',
+                            fontSize: 13.sp,
                             color: AppColor.ink,
                           ),
                         ),

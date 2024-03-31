@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:we_green_v1/features/points/screens/points_screen.dart';
 
 import '../../../core/constant/color.dart';
 
@@ -13,58 +16,65 @@ class AddYourWaste3 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage(
-                "assets/images/Screenshot__388_-removebg-preview 1.png"),
-          ),
-          SizedBox(
-            height: 2.h,
+          Transform.translate(
+            offset: Offset(-3.w, 0),
+            child: SizedBox(
+              width: 98.w,
+              child: const Image(
+                image: AssetImage(
+                    "assets/images/Screenshot__388_-removebg-preview 1.png"),
+              ),
+            ),
           ),
           Text(
             "Congratulations!",
             style: TextStyle(
+                fontFamily: 'DMSans',
                 fontWeight: FontWeight.w600,
                 color: AppColor.ink,
-                fontSize: 18.sp),
+                fontSize: 17.sp),
           ),
           SizedBox(
-            height: 2.h,
+            height: 1.h,
           ),
-          Image(
+          const Image(
             image: AssetImage(
                 "assets/images/Screenshot__389_-removebg-preview 1.png"),
           ),
           SizedBox(
-            height: 2.h,
+            height: 0.5.h,
           ),
           Image(
             image: AssetImage("assets/images/marker 2.png"),
           ),
           SizedBox(
-            height: 2.h,
+            height: 0.5.h,
           ),
-
           SizedBox(
             height: 4.h,
             width: 38.w,
             child: ElevatedButton(
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(AppColor.lightGrey.withOpacity(0.5)),
+                backgroundColor: MaterialStatePropertyAll(
+                    Colors.grey.withOpacity(0.1)),
                 shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(15.sp),
                   ),
                 ),
-                elevation: MaterialStateProperty.all<double>(10),
-
+                elevation: MaterialStateProperty.all<double>(4),
               ),
-              onPressed: () {},
-              child:  Text(
+              onPressed: () {
+                Get.offAll(const PointsScreen());
+              },
+              child: Text(
                 "Collection Points",
                 style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 9.sp,
-                    fontWeight: FontWeight.w600),
+                  fontFamily: 'DMSans',
+                  color: Colors.black,
+                  fontSize: 7.sp,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ),

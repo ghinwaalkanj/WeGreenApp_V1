@@ -32,14 +32,14 @@ class LoadingScreen extends StatelessWidget {
               child: Image.asset(AppImages.leaves),
             ),
             Positioned(
-              top: 43.h,
+              top: 46.h,
               child: Transform.scale(
                 scale: 2,
                 child: Column(
                   children: [
                     Lottie.asset(
                       AppImages.loading,
-                      height: 8.h,
+                      height: 6.h,
                     ),
                     SizedBox(height: 1.h,),
                     Row(
@@ -53,14 +53,14 @@ class LoadingScreen extends StatelessWidget {
                             fontFamily: 'DMSans',
                             color: AppColor.ink,
                             fontWeight: FontWeight.bold,
-                            fontSize: 10.sp,
+                            fontSize: 7.sp,
                           ),
                         ),
                         Transform.translate(
-                          offset: Offset(2.w,0.5.h),
+                          offset: Offset(1.w,0.4.h),
                           child: Lottie.asset(
                             AppImages.dots,
-                            width: 5.w,
+                            width: 3.w,
                           ),
                         ),
                       ],

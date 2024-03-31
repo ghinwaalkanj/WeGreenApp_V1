@@ -29,7 +29,8 @@ final Color color;
               child: Text(
                 "previous",
                 style: TextStyle(
-                    fontSize: 12.sp,
+                    fontFamily: 'DMSans',
+                    fontSize: 11.sp,
                     fontWeight: FontWeight.w600,
                     color: color),
               )),

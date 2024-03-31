@@ -9,6 +9,17 @@ class AddWasteController extends GetxController {
 
   final pageController = PageController();
   Rx<int> currentPageIndex = 0.obs;
+  var dropdownValue = 'Paper'.obs;
+  RxInt cat = 1.obs;
+
+  void updatecat(int num) {
+    cat.value = num;
+    update();
+  }
+
+  void changeDropdownValue(String newValue) {
+    dropdownValue.value = newValue;
+  }
 
   void updatePageIndicator(index) => currentPageIndex.value = index;
 
