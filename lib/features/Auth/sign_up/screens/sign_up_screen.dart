@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/get_utils.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/common_widgets/bg.dart';
-import 'package:we_green_v1/features/Auth/sign_in/screens/widgets/login_form.dart';
-import 'package:we_green_v1/features/Auth/sign_in/screens/widgets/login_header.dart';
 import 'package:we_green_v1/features/Auth/sign_up/screens/widgets/sign_up_form.dart';
 import 'package:we_green_v1/features/Auth/sign_up/screens/widgets/sign_up_header.dart';
 import '../../../../common_widgets/form_divider.dart';
 import '../../../../common_widgets/social_button.dart';
 import '../../../../core/class/statusrequest.dart';
-import '../../../../core/constant/color.dart';
 import '../../../../core/constant/image_strings.dart';
 import '../../../../core/constant/loading_screen.dart';
 import '../../../../core/constant/sizes.dart';
-import '../../../../core/constant/text_strings.dart';
 import '../controller/signup_controller.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -39,7 +34,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               Padding(
                 padding:  EdgeInsetsDirectional.only(
-                  top: 16.h,
+                  top: 12.h,
                   start: TSizes.defaultSpace,
                   end: TSizes.defaultSpace,
                   bottom: TSizes.defaultSpace,

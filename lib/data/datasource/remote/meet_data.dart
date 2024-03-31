@@ -2,30 +2,18 @@ import 'dart:io';
 import '../../../../core/class/crud.dart';
 import '../../../../core/constant/linkapi.dart';
 
-class LearnData {
+class MeetData {
   Crud crud;
 
-  LearnData(this.crud);
+  MeetData(this.crud);
 
-  posts() async {
-    var response = await crud.getData(AppLink.posts, {});
+  meets() async {
+    var response = await crud.getData(AppLink.meet, {});
     return response.fold((l) => l, (r) => r);
   }
 
-  myposts(
-      String usersid,
-      ) async {
-    var response = await crud.postData(
-      AppLink.myposts,
-      {
-        "usersid": usersid,
-      },
-      {},
-    );
-    return response.fold((l) => l, (r) => r);
-  }
 
-  addPost(
+  addMeet(
       String usersid,
       String title,
       String tagline,

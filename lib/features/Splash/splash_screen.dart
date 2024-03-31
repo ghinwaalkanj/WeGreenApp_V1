@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:we_green_v1/navigation_menu.dart';
 import '../../../core/services/services.dart';
 import '../../core/constant/color.dart';
 import '../../core/constant/image_strings.dart';
@@ -21,10 +22,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Get.to(OnBoardingScreen());
-      // myServices.sharedPreferences.getString("token") ==  null
-      //     ? Get.to(OnboardingScreen())
-      //     : Get.offAll(MainScreen());
+      myServices.sharedPreferences.getString("token") ==  null
+          ? Get.to(OnBoardingScreen())
+          : Get.offAll(NavigationMenu());
     });
   }
 
@@ -51,20 +51,21 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
           ),
           Positioned(
-            bottom: 22.h,
+            bottom: 25.h,
             child: Image.asset(
               AppImages.splash,
               height: 50.h,
             ),
           ),
           Positioned(
-            bottom: 27.5.h,
+            bottom: 31.h,
             child: Text(
               textAlign: TextAlign.center,
               'Lower Your Waste \n Protect Our Tomorrows',
               style: TextStyle(
+                fontFamily: 'DMSans',
                 fontSize: 12.sp,
-                color: Colors.black38,
+                color: Colors.black45,
               ),
             ),
           ),

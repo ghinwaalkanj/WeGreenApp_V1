@@ -37,8 +37,9 @@ class NotificationDrawer extends StatelessWidget {
                   'NOTIFICATIONS',
                   style: TextStyle(
                     color: AppColor.green,
+                    fontFamily: 'DMSans',
                     fontWeight: FontWeight.bold,
-                    fontSize: 17.sp,
+                    fontSize: 16.sp,
                   ),
                 ),
               ),
@@ -57,16 +58,24 @@ class NotificationDrawer extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('See the new WeGreen\nBusiness near you.'),
+                    Text(
+                      'See the new WeGreen\nBusiness near you.',
+                      style: TextStyle(
+                        fontFamily: 'DMSans',
+                        fontSize: 10.sp,
+                      ),
+                    ),
                     Icon(
                       Icons.location_on_outlined,
                       color: AppColor.ink,
-                      size: 25.sp,
+                      size: 22.sp,
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 2.h,),
+              SizedBox(
+                height: 2.h,
+              ),
               Container(
                 height: 7.h,
                 width: 35.w,
@@ -76,16 +85,24 @@ class NotificationDrawer extends StatelessWidget {
                 decoration: BoxDecoration(
                     color: Colors.black12,
                     borderRadius: BorderRadius.circular(10.sp)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('ZeroWaste Community\nchanged conference date.'),
-                    Icon(
-                      Icons.access_time,
-                      color: AppColor.ink,
-                      size: 25.sp,
-                    ),
-                  ],
+                child: FittedBox(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'ZeroWaste Community\nchanged conference date.',
+                        style: TextStyle(
+                          fontFamily: 'DMSans',
+                          fontSize: 10.sp,
+                        ),
+                      ),
+                      Icon(
+                        Icons.access_time,
+                        color: AppColor.ink,
+                        size: 22.sp,
+                      ),
+                    ],
+                  ),
                 ),
               )
             ],

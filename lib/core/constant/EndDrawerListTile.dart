@@ -26,7 +26,7 @@ class EndDrawerListTile extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: Colors.black54,
-                    fontFamily: 'Cairo',
+                    fontFamily: 'DMSans',
                     fontWeight: FontWeight.w600,
                     fontSize: 10.sp,
                   ),

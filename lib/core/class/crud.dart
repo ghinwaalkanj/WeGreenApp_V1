@@ -47,7 +47,7 @@ class Crud {
     var request = http.MultipartRequest('Post', Uri.parse(linkUrl));
     int fileLength = await file.length();
     var streamData = http.ByteStream(file.openRead());
-    var multiFile = http.MultipartFile('proofPhoto', streamData, fileLength,
+    var multiFile = http.MultipartFile('files', streamData, fileLength,
         filename: basename(file.path));
     request.files.add(multiFile);
     data.forEach((key, value) {

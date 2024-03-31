@@ -9,10 +9,12 @@ import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
 import 'package:we_green_v1/data/datasource/static/static.dart';
+import 'package:we_green_v1/features/home/screens/widget/upcomings.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
 import '../../../core/constant/loading_screen.dart';
+import '../../../core/services/services.dart';
 import '../controller/home_controller.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,6 +23,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomeControllerImp());
+    MyServices myServices = Get.find();
 
     return GetBuilder<HomeControllerImp>(
       builder: (controller) => controller.statusRequest == StatusRequest.loading
@@ -44,91 +47,16 @@ class HomeScreen extends StatelessWidget {
                   Positioned(
                     top: 26.h,
                     child: Text(
-                      'Welcome Ghinwa',
+                      'Welcome ${myServices.sharedPreferences.getString("users_name")}',
                       style: TextStyle(
                         color: AppColor.green,
+                        fontFamily: 'DMSans',
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.sp,
+                        fontSize: 15.sp,
                       ),
                     ),
                   ),
-                  Positioned(
-                    top: 32.h,
-                    child: Container(
-                      height: 17.h,
-                      width: 88.w,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.sp),
-                          boxShadow: const [
-                            BoxShadow(
-                                color: Colors.black26,
-                                offset: Offset(2, 2),
-                                blurRadius: 5)
-                          ]),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Container(
-                              alignment: Alignment.center,
-                              height: 5.h,
-                              width: 90.w,
-                              decoration: BoxDecoration(
-                                color: Colors.lightGreenAccent.withOpacity(0.7),
-                                borderRadius: BorderRadius.vertical(
-                                    top: Radius.circular(15.sp)),
-                              ),
-                              child: Text(
-                                'Upcomings',
-                                style: TextStyle(
-                                  color: AppColor.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13.sp,
-                                ),
-                              ),
-                            ),
-                            Transform.translate(
-                              offset: Offset(0, -5.h),
-                              child: SizedBox(
-                                height: 18.h,
-                                child: ListView.builder(
-                                    itemCount: controller.upcoming.length,
-                                    itemBuilder:
-                                        (BuildContext context, int index) {
-                                      return Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
-                                        children: [
-                                          Text(
-                                            controller.upcoming[index]
-                                                ['upcomings_title'],
-                                            style: TextStyle(
-                                              color: Colors.black87,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 13.sp,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            width: 7.w,
-                                          ),
-                                          Text(
-                                            controller.upcoming[index]
-                                                ['upcomings_date'],
-                                            style: TextStyle(
-                                              color: Colors.black54,
-                                              fontSize: 12.sp,
-                                            ),
-                                          ),
-                                        ],
-                                      );
-                                    }),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  const Upcomings(),
                   Positioned(
                     top: 45.h,
                     child: Container(
@@ -146,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
-                            onTap: (){
+                            onTap: () {
                               Get.to(DataLists.routs[index]);
                             },
                             child: Stack(
@@ -160,7 +88,9 @@ class HomeScreen extends StatelessWidget {
                                     color: Colors.white,
                                   ),
                                   width: 40.w,
-                                  child: Image.asset(DataLists.imagePaths[index]),
+                                  child: Image.asset(
+                                    DataLists.imagePaths[index],
+                                  ),
                                 ),
                                 Positioned(
                                   bottom: 0.h,
@@ -177,7 +107,9 @@ class HomeScreen extends StatelessWidget {
                                       DataLists.texts[index],
                                       style: TextStyle(
                                         color: AppColor.white,
-                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 9.sp,
+                                        fontFamily: 'DMSans',
                                       ),
                                     ),
                                   ),

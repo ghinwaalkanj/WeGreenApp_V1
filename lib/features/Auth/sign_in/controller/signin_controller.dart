@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/navigation_menu.dart';
-
 import '../../../../core/class/statusrequest.dart';
 import '../../../../core/services/handingdatacontroller.dart';
 import '../../../../core/services/services.dart';
@@ -20,6 +19,12 @@ class SignInControllerImp extends SignInController {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   GlobalKey<FormState> form = GlobalKey<FormState>();
+  RxBool visibile = true.obs;
+
+  void updatevisibility(){
+    visibile.value=!visibile.value;
+    update();
+  }
 
   @override
   signIn(BuildContext context) async {
@@ -41,7 +46,29 @@ class SignInControllerImp extends SignInController {
               .setInt("users_id", response['data']['users_id']);
           myServices.sharedPreferences
               .setString("users_name", response['data']['users_name']);
-
+          BuildContext context = Get.context!;
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.green,
+              content: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "Login successful ",
+                    textAlign: TextAlign.right,
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(
+                      fontSize: 9.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'DMSans',
+                    ),
+                  ),
+                ],
+              ),
+              duration: Duration(seconds: 2),
+            ),
+          );
           Get.offAll(() => NavigationMenu());
         } else if (response['status'] == false) {
           statusRequest = StatusRequest.success;

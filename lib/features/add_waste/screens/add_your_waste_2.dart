@@ -142,25 +142,27 @@ class ProcedureContainer extends StatelessWidget {
         ],
       ),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if(image!=null)  Image(image:AssetImage(image!),),
-            if(image==null)  Padding(
-              padding:  EdgeInsets.symmetric(horizontal:1.w),
-              child: FittedBox(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Icon(Icons.arrow_upward,color: AppColor.ink,),
-                    if(percentage!=null)Text("$percentage%",style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w600,color: AppColor.grey),)
-                  ],
+        child: FittedBox(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if(image!=null)  Image(image:AssetImage(image!),),
+              if(image==null)  Padding(
+                padding:  EdgeInsets.symmetric(horizontal:1.w),
+                child: FittedBox(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Icon(Icons.arrow_upward,color: AppColor.ink,),
+                      if(percentage!=null)Text("$percentage%",style: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w600,color: AppColor.grey),)
+                    ],
+                  ),
                 ),
               ),
-            ),
-            Text(text,style: TextStyle(color: AppColor.ink,fontWeight: FontWeight.w600,fontSize: 10.sp),)
-          ],
+              Text(text,style: TextStyle(color: AppColor.ink,fontWeight: FontWeight.w600,fontSize: 10.sp),)
+            ],
+          ),
         ),
       ),
 

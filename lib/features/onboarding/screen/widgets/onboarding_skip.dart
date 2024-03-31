@@ -18,7 +18,13 @@ class OnBoardingSkip extends StatelessWidget {
       top: TDeviceUtils.getAppBarHeight(),
       child: TextButton(
         onPressed: () => Get.to(SignInScreen()),
-        child: const Text("skip",style: TextStyle(color: AppColor.grey),),
+        child: const Text(
+          "skip",
+          style: TextStyle(
+            color: AppColor.grey,
+            fontFamily: 'DMSans'
+          ),
+        ),
       ),
     );
   }

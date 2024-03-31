@@ -27,6 +27,7 @@ class PostType extends StatelessWidget {
             text,
             style: TextStyle(
               color: color,
+              fontFamily: 'DMSans',
               fontWeight: FontWeight.w500,
               fontSize: 13.sp,
             ),

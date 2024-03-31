@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/image_strings.dart';
@@ -19,7 +20,8 @@ class LoginHeader extends StatelessWidget {
         Text(
           TTexts.loginTitle,
           style: TextStyle(
-              fontWeight: FontWeight.bold, fontSize: 33, color: AppColor.ink,letterSpacing: 1,shadows: [
+            fontFamily: 'DMSans',
+              fontWeight: FontWeight.bold, fontSize: 25.sp, color: AppColor.ink,letterSpacing: 1,shadows: [
             Shadow(
               color:AppColor.darkGrey,
               offset: Offset(3, 3),
@@ -31,4 +33,3 @@ class LoginHeader extends StatelessWidget {
     );
   }
 }
-///

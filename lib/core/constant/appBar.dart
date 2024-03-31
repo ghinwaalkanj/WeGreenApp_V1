@@ -24,7 +24,7 @@ final double scale;
       alignment: Alignment.center,
       children: [
         Positioned(
-          top: -54.h,
+          top: -62.h,
           child: Transform.scale(
             scale: 1.5,
             child: Image.asset(

@@ -12,6 +12,7 @@ import 'package:we_green_v1/features/Learn/controller/learn_controller.dart';
 import 'package:we_green_v1/features/Learn/screens/post_details_screen.dart';
 import 'package:we_green_v1/features/Learn/screens/widget/post_list.dart';
 import 'package:we_green_v1/features/Learn/screens/widget/post_type.dart';
+import 'package:we_green_v1/navigation_menu.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
@@ -35,7 +36,7 @@ class LearnScreen extends StatelessWidget {
               body: Stack(
                 alignment: Alignment.center,
                 children: [
-                  bg(),
+                  const bg(),
                   CustomAppBar(
                       image: Transform.scale(
                         scale: 1,
@@ -54,6 +55,7 @@ class LearnScreen extends StatelessWidget {
                       'Learn',
                       style: TextStyle(
                         color: AppColor.green,
+                        fontFamily: 'DMSans',
                         fontWeight: FontWeight.bold,
                         fontSize: 17.sp,
                       ),
@@ -64,9 +66,9 @@ class LearnScreen extends StatelessWidget {
                     left: 5.w,
                     child: IconButton(
                       onPressed: () {
-                        Get.back();
+                        Get.offAll(NavigationMenu());
                       },
-                      icon: Icon(Icons.arrow_back_outlined),
+                      icon: const Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,
                     ),
                   ),
@@ -74,8 +76,8 @@ class LearnScreen extends StatelessWidget {
                       top: 26.h,
                       right: 5.w,
                       child: GestureDetector(
-                        onTap: (){
-                          Get.to(CreatePostScreen());
+                        onTap: () {
+                          Get.offAll(CreatePostScreen());
                         },
                         child: Container(
                           padding: EdgeInsets.only(left: 3.w),
@@ -91,11 +93,10 @@ class LearnScreen extends StatelessWidget {
                                 'Create \nA post',
                                 style: TextStyle(
                                   color: AppColor.white,
-                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'DMSans',
+                                  fontSize: 9.sp,
                                 ),
-                              ),
-                              SizedBox(
-                                width: 1.w,
                               ),
                               Icon(
                                 Icons.add,
@@ -108,7 +109,7 @@ class LearnScreen extends StatelessWidget {
                       )),
                   Positioned(
                     top: 34.h,
-                    child: Container(
+                    child: SizedBox(
                       width: 82.w,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -123,7 +124,13 @@ class LearnScreen extends StatelessWidget {
                                 : Colors.grey,
                           ),
                           SizedBox(
-                            width: 5.w,
+                            height: 4.h,
+                            child: VerticalDivider(
+                              color: Colors.grey,
+                              thickness: 0.3.w,
+                              indent: 0.5.h,
+                              endIndent: 0.5.h,
+                            ),
                           ),
                           PostType(
                             text: 'Your Posts',
@@ -139,7 +146,7 @@ class LearnScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 38.h,
+                    top: 38.5.h,
                     child: Container(
                       color: Colors.black26,
                       height: 0.2.w,
@@ -148,36 +155,43 @@ class LearnScreen extends StatelessWidget {
                   ),
                   Positioned(
                     top: 40.h,
-                    child: Container(
-                      height: 6.h,
+                    child: SizedBox(
+                      height: 4.5.h,
                       width: 85.w,
-                      padding: EdgeInsets.only(top: 1.h),
+                      // padding: EdgeInsets.only(top: 1.h),
                       child: TextField(
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
-                            vertical: 1.h,
+                            vertical: 0.h,
                             horizontal: 15.0,
                           ),
                           hintText: 'Search article, news or tips',
-                          suffixIcon: Icon(Icons.search),
+                          hintStyle: TextStyle(
+                            fontFamily: 'DMSans',
+                            fontSize: 11.sp,
+                          ),
+                          suffixIcon: Icon(
+                            Icons.search,
+                            size: 15.sp,
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(11.sp),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.grey,
                               width: 1.0,
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(11.sp),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.grey,
                               width: 1.0,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(11.sp),
-                            borderSide: BorderSide(
-                              color: Colors.blue,
+                            borderSide: const BorderSide(
+                              color: AppColor.green,
                               width: 1.0,
                             ),
                           ),
@@ -186,7 +200,7 @@ class LearnScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 45.h,
+                    top: 43.5.h,
                     child: Container(
                       height: 6.h,
                       width: 84.w,
@@ -200,7 +214,7 @@ class LearnScreen extends StatelessWidget {
                                 'Filter',
                                 style: TextStyle(
                                   color: Colors.black54,
-                                  fontFamily: 'Cairo',
+                                  fontFamily: 'DMSans',
                                   fontSize: 11.sp,
                                 ),
                               ),
@@ -219,7 +233,7 @@ class LearnScreen extends StatelessWidget {
                             style: TextStyle(
                               decoration: TextDecoration.underline,
                               color: Colors.black54,
-                              fontFamily: 'Cairo',
+                              fontFamily: 'DMSans',
                               fontSize: 11.sp,
                             ),
                           ),
@@ -227,7 +241,7 @@ class LearnScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
+                  controller.cat==1?Positioned(
                     top: 46.h,
                     child: Container(
                       width: 85.w,
@@ -236,13 +250,13 @@ class LearnScreen extends StatelessWidget {
                       child: ListView.separated(
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
-                            onTap: (){
-                              Get.to(PostDetailsScreen());
+                            onTap: () {
+                              Get.to( PostDetailsScreen(posts: controller.posts, index: index,));
                             },
                             child: Container(
                               height: 13.h,
                               width: 10.h,
-                              margin: EdgeInsets.symmetric(horizontal: 1.w),
+                              padding: EdgeInsets.symmetric(horizontal: 2.w),
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10.sp),
@@ -254,60 +268,75 @@ class LearnScreen extends StatelessWidget {
                                     )
                                   ]),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Container(
-                                    padding: EdgeInsets.only(left: 3.w),
+                                  controller.posts[index]['posts_image']=='empty'?SizedBox():Container(
+                                    width: 25.w,
+                                    padding: EdgeInsets.only(
+                                      left: 3.w,
+                                    ),
                                     height: 7.h,
-                                    child: Image.network('https://wegreen.000webhostapp.com/upload/posts/${controller.posts[index]['posts_image']}'),
+                                    child: Image.network(
+                                      'https://wegreen.000webhostapp.com/upload/posts/${controller.posts[index]['posts_image']}',
+                                      fit: BoxFit.fill,
+                                    ),
                                   ),
                                   SizedBox(
                                     width: 2.w,
                                   ),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        controller.posts[index]['posts_title'],
-                                        style: TextStyle(
-                                          color: AppColor.green,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 11.sp,
-                                        ),
-                                      ),
-                                      Text(
-                                        controller.posts[index]['posts_tagline'],
-                                        style: TextStyle(
-                                          color: Colors.black54,
-                                          fontSize: 10.sp,
-                                        ),
-                                      ),
-                                      Text(
-                                        controller.posts[index]['posts_addtags'],
-                                        style: TextStyle(
-                                          color: Colors.black87,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 10.sp,
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        height: 1.h,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.bookmark_border_sharp,
-                                            color: AppColor.ink,
+                                  Flexible(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          controller.posts[index]['posts_title'],
+                                          style: TextStyle(
+                                            color: AppColor.green,
+                                            fontFamily: 'DMSans',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 10.sp,
                                           ),
-                                          SizedBox(width: 3.w,),
-                                          Icon(
-                                            Icons.favorite_border,
-                                            color: AppColor.ink,
+                                        ),
+                                        Text(
+                                          controller.posts[index]['posts_tagline'],
+                                          style: TextStyle(
+                                            color: Colors.black54,
+                                            fontFamily: 'DMSans',
+                                            fontSize: 8.sp,
                                           ),
-                                        ],
-                                      )
-                                    ],
+                                        ),
+                                        Text(
+                                          controller.posts[index]['posts_addtags'],
+                                          style: TextStyle(
+                                            color: Colors.black87,
+                                            fontFamily: 'DMSans',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 9.sp,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 0.5.h,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.bookmark_border_sharp,
+                                              color: AppColor.ink,
+                                              size: 15.sp,
+                                            ),
+                                            SizedBox(
+                                              width: 3.w,
+                                            ),
+                                            Icon(
+                                              Icons.favorite_border,
+                                              color: AppColor.ink,
+                                              size: 15.sp,
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -320,6 +349,116 @@ class LearnScreen extends StatelessWidget {
                           );
                         },
                         itemCount: controller.posts.length,
+                      ),
+                    ),
+                  ):Positioned(
+                    top: 46.h,
+                    child: Container(
+                      width: 85.w,
+                      padding: EdgeInsets.only(top: 1.h),
+                      height: 50.h,
+                      child: ListView.separated(
+                        itemBuilder: (BuildContext context, int index) {
+                          return GestureDetector(
+                            onTap: () {
+                              Get.to( PostDetailsScreen(posts: controller.myposts, index: index,));
+                            },
+                            child: Container(
+                              height: 13.h,
+                              width: 10.h,
+                              padding: EdgeInsets.symmetric(horizontal: 2.w),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10.sp),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(1, 1),
+                                      blurRadius: 5,
+                                    )
+                                  ]),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  controller.myposts[index]['posts_image']=='empty'?SizedBox():Container(
+                                    width: 25.w,
+                                    padding: EdgeInsets.only(
+                                      left: 3.w,
+                                    ),
+                                    height: 7.h,
+                                    child: Image.network(
+                                      'https://wegreen.000webhostapp.com/upload/posts/${controller.myposts[index]['posts_image']}',
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 2.w,
+                                  ),
+                                  Flexible(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          controller.myposts[index]['posts_title'],
+                                          style: TextStyle(
+                                            color: AppColor.green,
+                                            fontFamily: 'DMSans',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 10.sp,
+                                          ),
+                                        ),
+                                        Text(
+                                          controller.myposts[index]['posts_tagline'],
+                                          style: TextStyle(
+                                            color: Colors.black54,
+                                            fontFamily: 'DMSans',
+                                            fontSize: 8.sp,
+                                          ),
+                                        ),
+                                        Text(
+                                          controller.myposts[index]['posts_addtags'],
+                                          style: TextStyle(
+                                            color: Colors.black87,
+                                            fontFamily: 'DMSans',
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 9.sp,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 0.5.h,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.bookmark_border_sharp,
+                                              color: AppColor.ink,
+                                              size: 15.sp,
+                                            ),
+                                            SizedBox(
+                                              width: 3.w,
+                                            ),
+                                            Icon(
+                                              Icons.favorite_border,
+                                              color: AppColor.ink,
+                                              size: 15.sp,
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            height: 2.h,
+                          );
+                        },
+                        itemCount: controller.myposts.length,
                       ),
                     ),
                   ),

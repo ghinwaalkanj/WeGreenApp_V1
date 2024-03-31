@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/image_strings.dart';
@@ -19,7 +20,7 @@ class SignUpHeader extends StatelessWidget {
         Text(
           "Create Your Account",
           style: TextStyle(
-            fontWeight: FontWeight.bold, fontSize: 30, color: AppColor.ink,letterSpacing: 1,shadows: [
+            fontWeight: FontWeight.bold,   fontFamily: 'DMSans', fontSize: 23.sp, color: AppColor.ink,letterSpacing: 1,shadows: [
             Shadow(
               color:AppColor.darkGrey,
               offset: Offset(3, 3),
@@ -27,6 +28,7 @@ class SignUpHeader extends StatelessWidget {
             ),
           ],),
         ),
+        SizedBox(height: 1.h,),
       ],
     );
   }

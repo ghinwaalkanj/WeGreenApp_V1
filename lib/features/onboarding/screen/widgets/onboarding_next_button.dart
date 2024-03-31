@@ -22,7 +22,7 @@ class OnBoardingNextButton extends StatelessWidget {
           padding: EdgeInsets.all(16),
             shape:  CircleBorder(),
             backgroundColor:  AppColor.green ),
-        child: const Icon(Iconsax.arrow_right_3,color:AppColor.lightGrey,),
+        child: const Icon(Iconsax.arrow_right_3,color:AppColor.white,),
       ),
     );
   }
