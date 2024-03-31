@@ -13,10 +13,14 @@ class AddWasteHeader extends StatelessWidget {
     return Positioned(
         top: 26.h,
         left: 19.w,
-        right: 19.w,
         child: Text(
           "Add Your Waste Data",
-          style: TextStyle(color: AppColor.green, fontSize: 17.sp),
+          style: TextStyle(
+            color: AppColor.green,
+            fontSize: 17.sp,
+            fontFamily: 'DMSans',
+            fontWeight: FontWeight.bold,
+          ),
         ));
   }
 }

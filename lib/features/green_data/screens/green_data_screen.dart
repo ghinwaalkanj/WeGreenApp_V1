@@ -8,6 +8,7 @@ import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
+import 'package:we_green_v1/features/control_waste/screens/controle_waste_screen.dart';
 import 'package:we_green_v1/features/green_data/screens/widget/3r_status.dart';
 import 'package:we_green_v1/features/green_data/screens/widget/custom_container.dart';
 import 'package:we_green_v1/features/green_data/screens/widget/tips_container.dart';
@@ -16,10 +17,8 @@ import '../../../core/constant/EndDrawer.dart';
 import '../../../core/constant/appBar.dart';
 import '../../../core/constant/loading_screen.dart';
 import '../../../data/datasource/static/static.dart';
-import '../../../navigation_menu.dart';
 import '../../FootPrintTest/screen/FootPrintTest_screen.dart';
 import '../../add_waste/screens/add_waste_screens.dart';
-import '../../control_waste/screens/controle_waste_screen.dart';
 import '../controller/green_data_controller.dart';
 
 class GreenDataScreen extends StatelessWidget {
@@ -39,7 +38,7 @@ class GreenDataScreen extends StatelessWidget {
               body: Stack(
                 alignment: Alignment.center,
                 children: [
-                  bg(),
+                  const bg(),
                   CustomAppBar(
                       image: Image.asset(AppImages.gdata,),
                       onPressed: () {
@@ -53,9 +52,10 @@ class GreenDataScreen extends StatelessWidget {
                     child: Text(
                       'Green Data',
                       style: TextStyle(
+                        fontFamily: 'DMSans',
                         color: AppColor.green,
                         fontWeight: FontWeight.bold,
-                        fontSize: 17.sp,
+                        fontSize: 16.sp,
                       ),
                     ),
                   ),
@@ -64,7 +64,7 @@ class GreenDataScreen extends StatelessWidget {
                     left: 5.w,
                     child: IconButton(
                       onPressed: () {
-                        Get.off(NavigationMenu());
+                        Get.offAll(const ControlWasteScreen());
                       },
                       icon: Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,
@@ -77,7 +77,7 @@ class GreenDataScreen extends StatelessWidget {
                         CustomContainer2(
                           text: "Add Your\nWaste Data",
                           onPressed: () {
-                            Get.to(AddWasteScreen());
+                            Get.offAll(const AddWasteScreen());
                           },
                           image: Icon(
                             Icons.add_circle_outline,
@@ -91,7 +91,7 @@ class GreenDataScreen extends StatelessWidget {
                         CustomContainer2(
                           text: "Measure Carbon\nFootprint",
                           onPressed: () {
-                            Get.offAll(FootPrintTestScreen());
+                            Get.offAll(const FootPrintTestScreen());
                           },
                           image: Image.asset(
                             AppImages.co2,
@@ -109,12 +109,13 @@ class GreenDataScreen extends StatelessWidget {
                         Text(
                           '3R Status & Activities',
                           style: TextStyle(
+                            fontFamily: 'DMSans',
                             color: AppColor.ink,
                             fontWeight: FontWeight.w600,
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.keyboard_arrow_right_outlined,
                           color: AppColor.ink,
                         ),
@@ -131,27 +132,52 @@ class GreenDataScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 48.h,
-                    child: ThreeRStatus(text: '58%', procesure: 'Recycle',),
+                    top: 49.h,
+                    child: const ThreeRStatus(),
                   ),
                   Positioned(
                     top: 67.h,
                     left: 8.w,
-                    child: Row(
-                      children: [
-                        Text(
-                          'Tips',
-                          style: TextStyle(
-                            color: AppColor.ink,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 16.sp,
+                    child: Container(
+                      width: 84.w,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Tips',
+                              style: TextStyle(
+                                fontFamily: 'DMSans',
+                                color: AppColor.ink,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14.sp,
+                              ),
+                            ),
+                            const Icon(
+                              Icons.keyboard_arrow_right_outlined,
+                              color: AppColor.ink,
+                            ),
+                          ],
+                        ),
+                          GestureDetector(
+                            onTap: (){
+
+
+
+                            },
+                            child: Text(
+                              'view all',
+                              style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontFamily: 'DMSans',
+                                color: Colors.black54,
+                                fontSize: 10.sp,
+                              ),
+                            ),
                           ),
-                        ),
-                        const Icon(
-                          Icons.keyboard_arrow_right_outlined,
-                          color: AppColor.ink,
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Positioned(
@@ -186,4 +212,4 @@ class GreenDataScreen extends StatelessWidget {
     );
   }
 }
-//
+

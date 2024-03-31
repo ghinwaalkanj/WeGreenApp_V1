@@ -10,10 +10,9 @@ import 'package:we_green_v1/features/add_waste/screens/add_your_waste_3.dart';
 import 'package:we_green_v1/features/add_waste/screens/widget/add_waste_dots_navigation.dart';
 import 'package:we_green_v1/features/add_waste/screens/widget/add_waste_header.dart';
 import 'package:we_green_v1/features/add_waste/screens/widget/box_container.dart';
-
+import 'package:we_green_v1/features/control_waste/screens/controle_waste_screen.dart';
 import '../../../common_widgets/bg.dart';
 import '../../../core/constant/appBar.dart';
-import '../../../core/constant/image_strings.dart';
 import '../../FootPrintTest/screen/widget/fp_next_button.dart';
 import '../../FootPrintTest/screen/widget/fp_previous_button.dart';
 import '../../home/controller/home_controller.dart';
@@ -43,7 +42,17 @@ class AddWasteScreen extends StatelessWidget {
               onTap: () {
                 controller.scaffoldKey.currentState?.openEndDrawer();
               }),
-          Positioned(top: 25.h, left: 5.w, child: BackButton()),
+          Positioned(
+            top: 25.h,
+            left: 5.w,
+            child: IconButton(
+              onPressed: () {
+                Get.offAll(const ControlWasteScreen());
+              },
+              icon: Icon(Icons.arrow_back_outlined),
+              color: Colors.black54,
+            ),
+          ),
           AddWasteHeader(),
           BoxContainer(),
           PageView(

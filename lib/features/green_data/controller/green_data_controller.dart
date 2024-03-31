@@ -1,42 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sizer/sizer.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/services/handingdatacontroller.dart';
 import '../../../core/services/services.dart';
 import '../../../data/datasource/remote/home_data.dart';
+import '../../../data/datasource/remote/statistics_data.dart';
 
-
-abstract class GreenDataController extends GetxController {
-
-}
+abstract class GreenDataController extends GetxController {}
 
 class GreenDataControllerImp extends GreenDataController {
-  HomeData homeData = HomeData(Get.find());
+  StatisticsData statisticsData = StatisticsData(Get.find());
   MyServices myServices = Get.find();
   StatusRequest statusRequest = StatusRequest.none;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
+  List statistics = [];
 
-
-  List upcoming = [];
-
-
-  getOffers() async {
+  getStatistics() async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await homeData.upcoming();
+    var response = await statisticsData.Statistics(
+      '${myServices.sharedPreferences.getInt("users_id")}',
+    );
     if (StatusRequest.success == handlingData(response)) {
       Map mapData = {};
       mapData.addAll(response);
       if (mapData["status"] == true) {
-        upcoming = [];
-        upcoming = mapData['data'];
+        statistics = [];
+        statistics = mapData['data'];
         statusRequest = StatusRequest.success;
         update();
         return true;
       } else {
-        upcoming = [];
+        statistics = [];
         statusRequest = StatusRequest.success;
         update();
       }
@@ -45,17 +41,15 @@ class GreenDataControllerImp extends GreenDataController {
     } else if (statusRequest == StatusRequest.serverfailure) {}
   }
 
-
-
   @override
   void onInit() {
-    getOffers();
+    getStatistics();
     super.onInit();
   }
 
   @override
   void dispose() {
-    getOffers();
+    getStatistics();
     super.dispose();
   }
 }

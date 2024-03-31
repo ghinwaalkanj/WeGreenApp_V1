@@ -14,6 +14,7 @@ class AppLink {
   static const String signUp = "$server/auth/signup.php";
 
   static const String upcoming = "$server/upcomings/upcomings.php";
+  static const String statistics = "$server/Statistics/view.php";
 
   static const String posts = "$server/posts/general_posts.php";
   static const String myposts = "$server/posts/my_posts.php";
@@ -25,4 +26,9 @@ class AppLink {
 
   static const String catigory = "$server/catigories/view.php";
   static const String points = "$server/points/view.php";
+
+  static const String addgoal = "$server/goals/add.php";
+  static const String InProgress = "$server/goals/InProgress.php";
+  static const String Achieved = "$server/goals/Achieved.php";
+  static const String achive = "$server/goals/achive.php";
 }

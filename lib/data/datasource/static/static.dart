@@ -14,6 +14,13 @@ class DataLists {
     'Meet',
     'WeGreen Points'
   ];
+
+  static final List<String> statistics = [
+    'Recycle',
+    'Reuse',
+    'Reduce',
+  ];
+
   static final List<String> texts2 = [
     'Instead of using paper cups or bottled water, use coffee mugs or personal water bottles',
     'use cloth gift bags and stop ripping the paper off gifts!',

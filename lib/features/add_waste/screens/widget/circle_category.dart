@@ -5,11 +5,16 @@ import '../../../../core/constant/color.dart';
 
 class CircleCategory extends StatelessWidget {
   const CircleCategory({
-    super.key, required this.image,  this.text,  this.opacity=0.75,
+    super.key,
+    required this.image,
+    this.text,
+    this.opacity = 0.75,
   });
+
   final String image;
   final String? text;
   final double opacity;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,9 +34,23 @@ class CircleCategory extends StatelessWidget {
               ),
             ],
           ),
-          child: Center(child: Image(image: AssetImage(image),fit: BoxFit.fill,)),
+          child: Center(
+              child: Image(
+            image: AssetImage(image),
+            fit: BoxFit.fill,
+          )),
         ),
-        if (text!=null) Text(text!,style: TextStyle(color: AppColor.ink,fontWeight: FontWeight.w600,fontSize: 10.sp),) ,
+        SizedBox(height: 0.5.h,),
+        if (text != null)
+          Text(
+            text!,
+            style: TextStyle(
+              color: AppColor.ink,
+              fontWeight: FontWeight.w600,
+              fontSize: 8.sp,
+              fontFamily: 'DMSans',
+            ),
+          ),
       ],
     );
   }

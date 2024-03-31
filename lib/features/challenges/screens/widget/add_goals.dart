@@ -22,6 +22,7 @@ class AddGoal extends StatelessWidget {
         Text(
           'Select waste category',
           style: TextStyle(
+            fontFamily: 'DMSans',
             color: AppColor.black,
             fontWeight: FontWeight.w500,
             fontSize: 14.sp,
@@ -38,37 +39,37 @@ class AddGoal extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Obx(() => DropdownButton<String>(
-            value: controller.dropdownValue.value,
-            icon: Icon(Icons.keyboard_arrow_down_rounded),
-            underline: Container(),
-            onChanged: (String? newValue) {
-              controller.changeDropdownValue(newValue!);
-            },
-            items: <String>[
-              'Paper',
-              'Plastic',
-              'Glass',
-              'Food',
-              'Metal',
-              'Special',
-              'E-Waste',
-              'Drugs',
-              'Non-Recyclable'
-            ].map<DropdownMenuItem<String>>(
+                value: controller.dropdownValue.value,
+                icon: Icon(Icons.keyboard_arrow_down_rounded),
+                underline: Container(),
+                onChanged: (String? newValue) {
+                  controller.changeDropdownValue(newValue!);
+                },
+                items: <String>[
+                  'Paper',
+                  'Plastic',
+                  'Glass',
+                  'Food',
+                  'Metal',
+                  'Special',
+                  'E-Waste',
+                  'Drugs',
+                  'Non-Recyclable'
+                ].map<DropdownMenuItem<String>>(
                   (String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(
-                    value,
-                    style: TextStyle(
-                      color: AppColor.ink,
-                      fontSize: 11.sp,
-                    ),
-                  ),
-                );
-              },
-            ).toList(),
-          )),
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(
+                        value,
+                        style: TextStyle(
+                          color: AppColor.ink,
+                          fontSize: 11.sp,
+                        ),
+                      ),
+                    );
+                  },
+                ).toList(),
+              )),
         ),
         SizedBox(
           height: 2.h,
@@ -76,6 +77,7 @@ class AddGoal extends StatelessWidget {
         Text(
           'Select procedure type',
           style: TextStyle(
+            fontFamily: 'DMSans',
             color: AppColor.black,
             fontWeight: FontWeight.w500,
             fontSize: 14.sp,
@@ -125,22 +127,29 @@ class AddGoal extends StatelessWidget {
         Text(
           'Enter goal amount',
           style: TextStyle(
+            fontFamily: 'DMSans',
             color: AppColor.black,
             fontWeight: FontWeight.w500,
             fontSize: 14.sp,
           ),
         ),
+        SizedBox(height: 1.h,),
         Row(
           children: [
             SizedBox(
+              height: 5.h,
               width: 20.w,
-              child: const TextField(
-                style: TextStyle(
-                    color: AppColor.ink
-                ),
+              child: TextField(
+                controller: controller.amount,
+                style: const TextStyle(color: AppColor.ink),
                 decoration: InputDecoration(
                   hintText: '',
-                  border: UnderlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(7.sp),
+                      borderSide: BorderSide(
+                        width: 0.5.w,
+                        color: Colors.black12,
+                      )),
                 ),
               ),
             ),
@@ -148,8 +157,8 @@ class AddGoal extends StatelessWidget {
               controller.proc == 1
                   ? ' % recycling'
                   : controller.proc == 2
-                  ? '% reusing'
-                  : '% reducing',
+                      ? '% reusing'
+                      : '% reducing',
               style: TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.w500,
@@ -177,24 +186,26 @@ class AddGoal extends StatelessWidget {
                 controller.pickDate();
               },
               child: Obx(() => Text(
-                DateFormat('dd MMM yyyy').format(controller.selectedDate.value),
-                style: TextStyle(color: AppColor.ink),
-              )),
+                    DateFormat('dd MMM yyyy')
+                        .format(controller.selectedDate.value),
+                    style: TextStyle(color: AppColor.ink),
+                  )),
             ),
           ],
         ),
-        SizedBox(height: 3.h,),
+        SizedBox(
+          height: 3.h,
+        ),
         Center(
           child: MaterialButton(
             height: 6.h,
             minWidth: 44.w,
             color: AppColor.green,
             onPressed: () {
-              Get.to(NavigationMenu());
+             controller.addGoal();
             },
             shape: RoundedRectangleBorder(
-              borderRadius:
-              BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(30),
             ),
             child: Text(
               "add",

@@ -36,14 +36,15 @@ class CustomContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Transform.scale(
-              scale: 1.3,
+              scale: 1.2,
               child: Image.asset(image),
             ),
             Text(
               text,
               style: TextStyle(
+                fontFamily: 'DMSans',
                 fontWeight: FontWeight.w600,
-                fontSize: 16.sp,
+                fontSize: 15.sp,
                 color: AppColor.ink,
               ),
               textAlign: TextAlign.center,
