@@ -16,15 +16,15 @@ class HomeControllerImp extends HomeController {
   MyServices myServices = Get.find();
   StatusRequest statusRequest = StatusRequest.none;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-
-
   List upcoming = [];
 
 
-  getOffers() async {
+  getDates() async {
     statusRequest = StatusRequest.loading;
     update();
-    var response = await homeData.upcoming();
+    var response = await homeData.upcoming(
+      '${myServices.sharedPreferences.getInt("users_id")}',
+    );
     if (StatusRequest.success == handlingData(response)) {
       Map mapData = {};
       mapData.addAll(response);
@@ -44,17 +44,15 @@ class HomeControllerImp extends HomeController {
     } else if (statusRequest == StatusRequest.serverfailure) {}
   }
 
-
-
   @override
   void onInit() {
-    getOffers();
+    getDates();
     super.onInit();
   }
 
   @override
   void dispose() {
-    getOffers();
+    getDates();
     super.dispose();
   }
 }

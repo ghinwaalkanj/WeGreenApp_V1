@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:we_green_v1/navigation_menu.dart';
-
 import '../../../common_widgets/bg.dart';
+import '../../../common_widgets/navigation_menu.dart';
 import '../../../core/constant/color.dart';
 import '../../../core/constant/image_strings.dart';
 
@@ -94,7 +92,7 @@ class FootPrintTestResultScreen extends StatelessWidget {
                   minWidth: 44.w,
                   color: AppColor.green,
                   onPressed: () {
-                    Get.offAll(NavigationMenu());
+                    Get.offAll(const NavigationMenu());
                   },
                   shape: RoundedRectangleBorder(
                     borderRadius:

@@ -1,12 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-
+import '../../../../common_widgets/loading_screen.dart';
 import '../../../../core/class/statusrequest.dart';
 import '../../../../core/constant/color.dart';
-import '../../../../core/constant/image_strings.dart';
-import '../../../../core/constant/loading_screen.dart';
 import '../../../../data/datasource/static/static.dart';
 import '../../controller/green_data_controller.dart';
 

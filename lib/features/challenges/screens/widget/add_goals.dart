@@ -6,7 +6,7 @@ import 'package:we_green_v1/features/challenges/screens/widget/procedures_types.
 
 import '../../../../core/constant/color.dart';
 import '../../../../core/constant/image_strings.dart';
-import '../../../../navigation_menu.dart';
+import '../../../../common_widgets/navigation_menu.dart';
 import '../../controller/challenges_controller.dart';
 
 class AddGoal extends StatelessWidget {

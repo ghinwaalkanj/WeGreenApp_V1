@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
-import 'color.dart';
-import 'image_strings.dart';
+import '../core/constant/color.dart';
+import '../core/constant/image_strings.dart';
 
 class CustomAppBar extends StatelessWidget {
   final Widget? image;

@@ -13,7 +13,8 @@ class AppLink {
   static const String signIn = "$server/auth/login.php";
   static const String signUp = "$server/auth/signup.php";
 
-  static const String upcoming = "$server/upcomings/upcomings.php";
+  static const String upcoming = "$server/date/view.php";
+  static const String adddate = "$server/date/add.php";
   static const String statistics = "$server/Statistics/view.php";
 
   static const String posts = "$server/posts/general_posts.php";
