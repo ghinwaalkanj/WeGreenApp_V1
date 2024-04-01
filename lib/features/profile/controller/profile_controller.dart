@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import '../../../common_widgets/navigation_menu.dart';
 import '../../../core/class/statusrequest.dart';
 import '../../../core/services/handingdatacontroller.dart';
 import '../../../core/services/services.dart';
 import '../../../data/datasource/remote/goal_data.dart';
-import '../../../data/datasource/remote/home_data.dart';
-import '../../../data/datasource/remote/profile_data.dart';
 import '../../../data/datasource/remote/statistics_data.dart';
-import '../../../navigation_menu.dart';
 
 
 abstract class ProfileController extends GetxController {

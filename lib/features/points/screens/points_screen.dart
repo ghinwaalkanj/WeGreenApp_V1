@@ -1,18 +1,15 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/common_widgets/bg.dart';
-import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
+import '../../../common_widgets/Drawer.dart';
+import '../../../common_widgets/EndDrawer.dart';
+import '../../../common_widgets/loading_screen.dart';
+import '../../../common_widgets/navigation_menu.dart';
 import '../../../core/class/statusrequest.dart';
-import '../../../core/constant/EndDrawer.dart';
-import '../../../core/constant/appBar.dart';
-import '../../../core/constant/loading_screen.dart';
-import '../../../navigation_menu.dart';
+import '../../../common_widgets/appBar.dart';
 import '../controllers/points_controller.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

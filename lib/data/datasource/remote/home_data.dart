@@ -7,8 +7,16 @@ class HomeData {
 
   HomeData(this.crud);
 
-  upcoming() async {
-    var response = await crud.getData(AppLink.upcoming, {});
+  upcoming(
+      String usersid,
+      ) async {
+    var response = await crud.postData(
+      AppLink.upcoming,
+      {
+        "usersid": usersid,
+      },
+      {},
+    );
     return response.fold((l) => l, (r) => r);
   }
 }

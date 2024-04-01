@@ -1,22 +1,16 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/common_widgets/bg.dart';
-import 'package:we_green_v1/core/constant/Drawer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
-import 'package:we_green_v1/features/Learn/controller/learn_controller.dart';
-import 'package:we_green_v1/features/Learn/screens/post_details_screen.dart';
-import 'package:we_green_v1/features/Learn/screens/widget/post_type.dart';
-import 'package:we_green_v1/navigation_menu.dart';
+import '../../../common_widgets/Drawer.dart';
+import '../../../common_widgets/EndDrawer.dart';
+import '../../../common_widgets/loading_screen.dart';
+import '../../../common_widgets/navigation_menu.dart';
 import '../../../core/class/statusrequest.dart';
-import '../../../core/constant/EndDrawer.dart';
-import '../../../core/constant/appBar.dart';
-import '../../../core/constant/loading_screen.dart';
-import '../../add_waste/screens/widget/circle_category.dart';
+import '../../../common_widgets/appBar.dart';
 import '../controller/profile_controller.dart';
 
 class AchievedScreen extends StatelessWidget {
@@ -28,7 +22,7 @@ class AchievedScreen extends StatelessWidget {
 
     return GetBuilder<ProfileControllerImp>(
       builder: (controller) => controller.statusRequest == StatusRequest.loading
-          ? LoadingScreen()
+          ? const LoadingScreen()
           : Scaffold(
               key: controller.scaffoldKey,
               drawer: const MyDrawer(),
@@ -66,7 +60,7 @@ class AchievedScreen extends StatelessWidget {
                     left: 5.w,
                     child: IconButton(
                       onPressed: () {
-                        Get.offAll(NavigationMenu());
+                        Get.offAll(const NavigationMenu());
                       },
                       icon: const Icon(Icons.arrow_back_outlined),
                       color: Colors.black54,

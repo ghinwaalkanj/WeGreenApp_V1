@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
-import '../../../core/constant/image_strings.dart';
+import '../../core/constant/image_strings.dart';
 import 'package:lottie/lottie.dart';
 
 class LoadingScreen extends StatelessWidget {

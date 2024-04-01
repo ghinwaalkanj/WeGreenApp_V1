@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:we_green_v1/navigation_menu.dart';
 import '../../../core/services/services.dart';
+import '../../common_widgets/navigation_menu.dart';
 import '../../core/constant/color.dart';
 import '../../core/constant/image_strings.dart';
 import '../onboarding/screen/onboarding_screen.dart';
@@ -23,8 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Timer(const Duration(seconds: 3), () {
       myServices.sharedPreferences.getString("token") ==  null
-          ? Get.to(OnBoardingScreen())
-          : Get.offAll(NavigationMenu());
+          ? Get.to(const OnBoardingScreen())
+          : Get.offAll(const NavigationMenu());
     });
   }
 

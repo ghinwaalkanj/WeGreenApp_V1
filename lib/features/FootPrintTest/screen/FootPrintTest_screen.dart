@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/color.dart';
+import '../../../common_widgets/navigation_menu.dart';
 import '../../../core/constant/image_strings.dart';
-import '../../../navigation_menu.dart';
 import 'FootPrintTestQuestions_screen.dart';
 
 class FootPrintTestScreen extends StatelessWidget {

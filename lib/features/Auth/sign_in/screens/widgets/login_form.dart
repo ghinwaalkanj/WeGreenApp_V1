@@ -5,15 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/features/Auth/sign_up/screens/sign_up_screen.dart';
-
 import '../../../../../common_widgets/custom_text_field.dart';
 import '../../../../../core/constant/color.dart';
 import '../../../../../core/constant/sizes.dart';
 import '../../../../../core/constant/text_strings.dart';
-import '../../../../../navigation_menu.dart';
 import '../../controller/signin_controller.dart';
 
 class LoginForm extends StatelessWidget {

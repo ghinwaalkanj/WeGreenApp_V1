@@ -1,11 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
-import 'EndDrawerListTile.dart';
-import 'color.dart';
+
+import '../core/constant/color.dart';
 
 class NotificationDrawer extends StatelessWidget {
   const NotificationDrawer({super.key});

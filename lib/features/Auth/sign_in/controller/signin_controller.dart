@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:we_green_v1/navigation_menu.dart';
+import '../../../../common_widgets/navigation_menu.dart';
 import '../../../../core/class/statusrequest.dart';
 import '../../../../core/services/handingdatacontroller.dart';
 import '../../../../core/services/services.dart';

@@ -5,10 +5,10 @@ import 'package:we_green_v1/common_widgets/bg.dart';
 import 'package:we_green_v1/features/Auth/sign_up/screens/widgets/sign_up_form.dart';
 import 'package:we_green_v1/features/Auth/sign_up/screens/widgets/sign_up_header.dart';
 import '../../../../common_widgets/form_divider.dart';
+import '../../../../common_widgets/loading_screen.dart';
 import '../../../../common_widgets/social_button.dart';
 import '../../../../core/class/statusrequest.dart';
 import '../../../../core/constant/image_strings.dart';
-import '../../../../core/constant/loading_screen.dart';
 import '../../../../core/constant/sizes.dart';
 import '../controller/signup_controller.dart';
 
