@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:we_green_v1/core/constant/image_strings.dart';
+import 'package:we_green_v1/features/Auth/sign_in/screens/sign_in_screen.dart';
 import '../core/constant/color.dart';
+import '../core/services/services.dart';
 import 'EndDrawerListTile.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -10,6 +12,8 @@ class MyDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MyServices myServices = Get.find();
+
     return SafeArea(
       child: Drawer(
         backgroundColor: Colors.white,
@@ -88,6 +92,13 @@ class MyDrawer extends StatelessWidget {
               EndDrawerListTile(
                 title: 'Help',
                 onPressed: () {},
+              ),
+              EndDrawerListTile(
+                title: 'Log Out',
+                onPressed: () {
+                  myServices.sharedPreferences.clear();
+                  Get.offAll(const SignInScreen());
+                },
               ),
               Transform.scale(
                   scale: 1.3,
