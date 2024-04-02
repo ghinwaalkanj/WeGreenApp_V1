@@ -18,11 +18,24 @@ You can download the WeGreen app from the following link:
 
 ## Meet Our Team
 
-### Almoaead Shwin
-- **Email:** almoaead77@gmail.com
-- **Telegram:** [@almoaead](https://t.me/Cod3N1nja)
-
-### Ghinwa Alkinj
-- **Email:** eng.ghinwa.alkanj@gmail.com
-- **Telegram:** [@ghinwa](https://t.me/Ghnoosh72)
-
+<div align="center">
+  
+  <img src="https://img.icons8.com/material-outlined/24/000000/email.png" alt="Email Icon">
+  &nbsp; [Almoaead Shwin](https://t.me/Cod3N1nja)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://img.icons8.com/material-outlined/24/000000/email.png" alt="Email Icon">
+  &nbsp; [Ghinwa Alkinj](https://t.me/Ghnoosh72)
+  
+  <img src="https://img.icons8.com/material-outlined/24/000000/telegram-app--v3.png" alt="Telegram Icon">
+  &nbsp; [@almoaead](https://t.me/Cod3N1nja)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://img.icons8.com/material-outlined/24/000000/telegram-app--v3.png" alt="Telegram Icon">
+  &nbsp; [@ghinwa](https://t.me/Ghnoosh72)
+  
+  <img src="https://img.icons8.com/material-outlined/24/000000/linkedin.png" alt="LinkedIn Icon">
+  &nbsp; [Almoaead Shwin](https://www.linkedin.com/in/almoaead/)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://img.icons8.com/material-outlined/24/000000/linkedin.png" alt="LinkedIn Icon">
+  &nbsp; [Ghinwa Alkinj](https://www.linkedin.com/in/ghinwa-alkanj/)
+  
+</div>
