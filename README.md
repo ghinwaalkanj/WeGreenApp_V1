@@ -19,12 +19,10 @@ You can download the WeGreen app from the following link:
 ## Meet Our Team
 
 ### Almoaead Shwin
-- **Email:** almoaead@example.com
-- **Telegram:** @almoaead
-- ![Telegram Icon](https://img.icons8.com/color/48/000000/telegram-app--v3.png) ![Twitter Icon](https://img.icons8.com/color/48/000000/twitter--v1.png)
+- **Email:** almoaead77@gmail.com
+- **Telegram:** [@almoaead](https://t.me/Cod3N1nja)
 
 ### Ghinwa Alkinj
-- **Email:** ghinwa@example.com
-- **Telegram:** @ghinwa
-- ![Telegram Icon](https://img.icons8.com/color/48/000000/telegram-app--v3.png) ![Instagram Icon](https://img.icons8.com/color/48/000000/instagram-new--v1.png)
+- **Email:** eng.ghinwa.alkanj@gmail.com
+- **Telegram:** [@ghinwa](https://t.me/Ghnoosh72)
 
