@@ -1,16 +1,28 @@
-# we_green_v1
+# WeGreen
 
-A new Flutter project.
+<div align="center">
+  <img src="https://github.com/ghinw/WeGreenApp_V1/assets/116727137/f3da3bd3-5a96-4e10-82f5-9ece2233d601" alt="WeGreen Logo" width="100">
+</div>
 
-## Getting Started
+WeGreen is a mobile application aimed at combating food waste and promoting sustainability. Our mission is to empower individuals and organizations to take action towards reducing food waste and its environmental impact.
 
-This project is a starting point for a Flutter application.
+## 🎥 Promo Video
 
-A few resources to get you started if this is your first Flutter project:
+You can also check out our app's promo video for a sneak peek into what WeGreen has to offer: [WeGreen Promo Video](https://drive.google.com/file/d/1aLqLpz208v-ibT_SIi1sTG_81u5NCb3P/view?usp=drive_link).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 📲 Download WeGreen App
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You can download the WeGreen app from the following link:
+
+[Download WeGreen App](https://www.mediafire.com/file/413dcgevyuwrk3n/WeGreen.apk/file)
+
+## Meet Our Team
+
+### Almoaead Shwin
+- **Email:** almoaead77@gmail.com
+- **Telegram:** [@almoaead](https://t.me/Cod3N1nja)
+
+### Ghinwa Alkinj
+- **Email:** eng.ghinwa.alkanj@gmail.com
+- **Telegram:** [@ghinwa](https://t.me/Ghnoosh72)
+
