@@ -10,4 +10,21 @@ WeGreen is a mobile application aimed at combating food waste and promoting sust
 
 You can also check out our app's promo video for a sneak peek into what WeGreen has to offer: [WeGreen Promo Video](https://drive.google.com/file/d/1aLqLpz208v-ibT_SIi1sTG_81u5NCb3P/view?usp=drive_link).
 
-Join us in our mission to make a positive impact on the environment by reducing food waste with WeGreen!
+## 📲 Download WeGreen App
+
+You can download the WeGreen app from the following link:
+
+[Download WeGreen App](https://www.mediafire.com/file/413dcgevyuwrk3n/WeGreen.apk/file)
+
+## Meet Our Team
+
+### Almoaead Shwin
+- **Email:** almoaead@example.com
+- **Telegram:** @almoaead
+- ![Telegram Icon](https://img.icons8.com/color/48/000000/telegram-app--v3.png) ![Twitter Icon](https://img.icons8.com/color/48/000000/twitter--v1.png)
+
+### Ghinwa Alkinj
+- **Email:** ghinwa@example.com
+- **Telegram:** @ghinwa
+- ![Telegram Icon](https://img.icons8.com/color/48/000000/telegram-app--v3.png) ![Instagram Icon](https://img.icons8.com/color/48/000000/instagram-new--v1.png)
+
