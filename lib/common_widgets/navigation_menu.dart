@@ -1,3 +1,4 @@
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -8,41 +9,61 @@ import 'package:we_green_v1/features/home/screens/home_screen.dart';
 import 'package:we_green_v1/features/profile/screens/profile_screen.dart';
 
 class NavigationMenu extends StatelessWidget {
-  const NavigationMenu({Key? key}) : super(key: key);
+  const NavigationMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(NavigationController());
     return Scaffold(
-      bottomNavigationBar: Obx(
-        () => NavigationBar(
-          height: 8.h,
-          elevation: 0,
-          selectedIndex: controller.selectedIndex.value,
-          onDestinationSelected: (index) =>
-              controller.selectedIndex.value = index,
-          backgroundColor: AppColor.white,
-          indicatorColor: AppColor.beige.withOpacity(0.4),
-          //indicatorColor: AppColor.green.withOpacity(0.2),
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(
-                Iconsax.home,
-                color: AppColor.ink,
-              ),
-              label: 'Home',
-            ),
-            NavigationDestination(
-              icon:
-                  Icon(Icons.add_circle_outline_outlined, color: AppColor.ink),
-              label: 'Add waste',
-            ),
-            NavigationDestination(
-                icon: Icon(Iconsax.user, color: AppColor.ink),
-                label: 'Profile'),
-          ],
-        ),
-      ),
+      bottomNavigationBar: Obx(() => AnimatedBottomNavigationBar.builder(
+            itemCount: NavigationController().screens.length,
+            tabBuilder: (int index, bool isActive) {
+              final color = isActive ? AppColor.ink : Colors.grey;
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  controller.selectedIndex == index
+                      ? Icon(
+                          NavigationController().icons[index],
+                          size: 22.sp,
+                          color: color,
+                        )
+                      : Transform.translate(
+                          offset: Offset(0, 1.h),
+                          child: Icon(
+                            NavigationController().icons[index],
+                            size: 20.sp,
+                            color: color,
+                          ),
+                        ),
+                  SizedBox(height: 0.1.h),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Text(
+                      controller.selectedIndex == index
+                          ? NavigationController()
+                              .bottomnavigationbaritems[index]
+                          : '',
+                      maxLines: 1,
+                      style: TextStyle(
+                          color: color,
+                          fontSize: isActive ? 8.sp : 8.sp,
+                          fontFamily: 'DMSans',
+                          fontWeight:
+                              isActive ? FontWeight.bold : FontWeight.normal),
+                    ),
+                  )
+                ],
+              );
+            },
+            activeIndex: controller.selectedIndex.value,
+            gapWidth: 2.w,
+            notchSmoothness: NotchSmoothness.softEdge,
+            onTap: (index) {
+              controller.selectedIndex.value = index;
+            },
+          )),
       body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
@@ -51,8 +72,19 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   final screens = [
-    HomeScreen(),
-    AddWasteScreen(),
-    ProfileScreen(),
+    const HomeScreen(),
+    const AddWasteScreen(),
+    const ProfileScreen(),
+  ];
+  final icons = [
+    Iconsax.home,
+    Icons.add_circle_outline_outlined,
+    Iconsax.user,
+  ];
+
+  List bottomnavigationbaritems = [
+    'home',
+    'add waste',
+    'profile',
   ];
 }

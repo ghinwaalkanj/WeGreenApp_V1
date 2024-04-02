@@ -16,6 +16,7 @@ import '../../../common_widgets/appBar.dart';
 import '../../../data/datasource/static/static.dart';
 import '../../FootPrintTest/screen/FootPrintTest_screen.dart';
 import '../../add_waste/screens/add_waste_screens.dart';
+import '../../tips/screens/tips_screen.dart';
 import '../controller/green_data_controller.dart';
 
 class GreenDataScreen extends StatelessWidget {
@@ -37,7 +38,9 @@ class GreenDataScreen extends StatelessWidget {
                 children: [
                   const bg(),
                   CustomAppBar(
-                      image: Image.asset(AppImages.gdata,),
+                      image: Image.asset(
+                        AppImages.gdata,
+                      ),
                       onPressed: () {
                         controller.scaffoldKey.currentState?.openDrawer();
                       },
@@ -135,35 +138,30 @@ class GreenDataScreen extends StatelessWidget {
                   Positioned(
                     top: 67.h,
                     left: 8.w,
-                    child: Container(
+                    child: SizedBox(
                       width: 84.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                        Row(
+                      child: GestureDetector(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            Row(
+                              children: [
+                                Text(
+                                  'Tips',
+                                  style: TextStyle(
+                                    fontFamily: 'DMSans',
+                                    color: AppColor.ink,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14.sp,
+                                  ),
+                                ),
+                                const Icon(
+                                  Icons.keyboard_arrow_right_outlined,
+                                  color: AppColor.ink,
+                                ),
+                              ],
+                            ),
                             Text(
-                              'Tips',
-                              style: TextStyle(
-                                fontFamily: 'DMSans',
-                                color: AppColor.ink,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 14.sp,
-                              ),
-                            ),
-                            const Icon(
-                              Icons.keyboard_arrow_right_outlined,
-                              color: AppColor.ink,
-                            ),
-                          ],
-                        ),
-                          GestureDetector(
-                            onTap: (){
-
-
-
-                            },
-                            child: Text(
                               'view all',
                               style: TextStyle(
                                 decoration: TextDecoration.underline,
@@ -172,41 +170,42 @@ class GreenDataScreen extends StatelessWidget {
                                 fontSize: 10.sp,
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
                   Positioned(
-                      top: 61.h,
-                      child:  Container(
-                          height: 47.h,
-                          width: 100.w,
-                          padding: EdgeInsets.symmetric(horizontal: 3.5.w),
-                          child: ListView.separated(
-                              scrollDirection: Axis.horizontal,
-                              itemBuilder: (BuildContext context, int index) {
-                                return TipsContainer(
-                                  onPressed: () {},
-                                  image: Image.asset(
-                                    DataLists.imagePaths2[index],
-                                    fit: BoxFit.fill,
-                                  ),
-                                  text: DataLists.texts2[index],
-                                );
-                              },
-                              separatorBuilder:
-                                  (BuildContext context, int index) {
-                                return SizedBox(
-                                  width: 1.w,
-                                );
-                              },
-                              itemCount: 3)),
-                      ),
+                    top: 61.h,
+                    child: Container(
+                        height: 47.h,
+                        width: 100.w,
+                        padding: EdgeInsets.symmetric(horizontal: 3.5.w),
+                        child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (BuildContext context, int index) {
+                              return TipsContainer(
+                                onPressed: () {
+                                  Get.offAll(const TipsScreen());
+                                },
+                                image: Image.asset(
+                                  DataLists.imagePaths2[index],
+                                  fit: BoxFit.fill,
+                                ),
+                                text: DataLists.texts2[index],
+                              );
+                            },
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return SizedBox(
+                                width: 1.w,
+                              );
+                            },
+                            itemCount: 3)),
+                  ),
                 ],
               ),
             ),
     );
   }
 }
-

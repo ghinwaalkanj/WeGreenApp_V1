@@ -18,6 +18,7 @@ class AppImages {
    static const String footer = "$rootImages/footer.png";
    static const String point = "$rootImages/point.png";
    static const String calender = "$rootImages/calender.png";
+   static const String tips = "$rootImages/tips.png";
 
 
    static const String recycle = "$rootImages/recycle.png";

@@ -463,7 +463,7 @@ class CalenderScreen extends StatelessWidget {
                                         ),
                                       ),
                                       leading: const CircleAvatar(
-                                        backgroundColor: Colors.redAccent,
+                                        backgroundColor: AppColor.green,
                                         child: Icon(
                                           Icons.calendar_month,
                                           color: Colors.white,
